@@ -1,0 +1,992 @@
+\documentclass[review]{elsarticle}
+
+\usepackage{lineno,hyperref}
+\modulolinenumbers[5]
+
+\usepackage{amsmath,amsthm,amssymb,epsfig,bm,amsmath}
+\usepackage{array}
+ \usepackage{graphicx}
+\usepackage{float}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage{amsmath}
+\usepackage{mhchem}
+\usepackage{xcolor}
+\usepackage{xparse}
+\usepackage{adjustbox}
+\usepackage{MnSymbol}% http://ctan.org/pkg/mnsymbol
+\usepackage{mathdots}% http://ctan.org/pkg/mathdots
+\usepackage{makecell}
+\usepackage{listings}
+\usepackage[printwatermark]{xwatermark}
+\usepackage{footnote}
+\usepackage[flushleft]{threeparttable}
+\usepackage{multirow}
+\usepackage{relsize}
+\usepackage{lettrine}
+\usepackage{courier}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+\usepackage{amsmath,amsthm,amssymb,amsfonts} % this for /equation* (without numbering)
+\usepackage{graphicx} % for figures
+\usepackage[margin=1in]{geometry} % changing the margins
+\usepackage[yyyymmdd]{datetime}
+% this package to use today date
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{lipsum}
+\usepackage{setspace}
+\usepackage{cleveref}
+\usepackage{siunitx}
+\usepackage{pdfpages}
+\usepackage{tabularray}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{booktabs,caption}
+\usepackage[]{hyperref}
+\hypersetup{
+ colorlinks  = true, %Colours links instead of ugly boxes
+ urlcolor   = blue, %Colour for external hyperlinks
+ linkcolor  = black, %Colour of internal links
+ citecolor  = blue %Colour of citations
+}
+%\usepackage[round]{natbib}
+\usepackage[utf8]{inputenc}
+ 
+\usepackage{listings}
+\usepackage{color}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+  backgroundcolor=\color{backcolour},  
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\footnotesize,
+  breakatwhitespace=false,     
+  breaklines=true,         
+  captionpos=b,          
+  keepspaces=true,         
+  numbers=left,          
+  numbersep=5pt,         
+  showspaces=false,        
+  showstringspaces=false,
+  showtabs=false,         
+  tabsize=2,
+  escapeinside={<@}{@>},
+}
+ 
+\lstset{style=mystyle}
+\lstset{%
+  numbers=none,
+  tabsize=3,
+  breaklines=true,
+  basicstyle=\small\ttfamily,
+  framerule=0pt,
+  %backgroundcolor=\color{gray!25},
+  columns=flexible,
+  upquote=true, 
+  keepspaces=true
+}
+ 
+\lstset{style=mystyle}
+\usepackage{booktabs} % For \toprule, \midrule and \bottomrule
+\usepackage{siunitx} % Formats the units and values
+
+\usepackage{mathtools} % for arrows
+\usepackage{gensymb} % To write degree C 
+\usepackage{mhchem} % To write chemical symbols
+\usepackage{fixltx2e} % To write subscripts and superscripts 
+\usepackage{bbm}
+
+\usepackage{multirow}
+\usepackage{tabularx}
+
+\usepackage{fancyhdr} % customize the footer and header
+\theoremstyle{definition}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newenvironment{pf}{{\noindent\sc Proof. }}{\qed}
+\newenvironment{map}{\[\begin{array}{cccc}} {\end{array}\]}
+
+\theoremstyle{definition}
+\newtheorem*{defn}{Definition}
+\newtheorem*{exmp}{Example}
+\newtheorem*{prob}{Problem}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+\newtheorem*{note}{Note}
+\newtheorem*{exer}{Exercise}
+
+\textwidth 6.9in
+\textheight 9.35in
+\setlength{\oddsidemargin}{-0.04 in}
+\setlength{\topmargin}{-0.7in}
+
+\newcommand{\Project}[4]{
+  \pagestyle{myheadings}
+  \thispagestyle{plain}
+  \newpage
+  \setcounter{page}{1}
+  \noindent
+  \markboth{#1}{#1}
+  \vspace*{2mm}
+}
+
+\usepackage{soul} %To highlight the text 
+\soulregister\cite7
+\soulregister\ref7
+\soulregister\pageref7
+\newcommand{\rev}[1]{\textcolor{blue}{#1}} % Highlight reviewer-response additions/changes
+\usepackage{bm}
+
+\usepackage{framed} % Framing content
+
+\usepackage{multicol} % Multiple columns environment
+
+\usepackage{nomencl} % Nomenclature package
+\usepackage{tikz}
+\makenomenclature
+\usepackage[resetlabels,labeled]{multibib}
+
+\setlength{\nomitemsep}{-\parskip} % Baseline skip between items
+
+\renewcommand*\nompreamble{\begin{multicols}{2}}
+
+\renewcommand*\nompostamble{\end{multicols}}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\usepackage{subcaption} %for stacking explainability plots
+\newcommand{\cmark}{\ding{52}}%
+\newcommand{\xmark}{\ding{53}}%
+\definecolor{light-gray}{gray}{0.95}
+\newcommand{\code}[1]{\colorbox{light-gray}{\small\color{blue}\textbf{\texttt{#1}}}}
+
+% \usepackage{draftwatermark}
+% \usepackage{blindtext} 
+% \SetWatermarkAngle{45} 
+% \SetWatermarkLightness{.9} 
+% \SetWatermarkFontSize{1cm} 
+% \SetWatermarkScale{1} 
+% \SetWatermarkText{\tt{Radaideh et al. 2019}}
+%%%%%%%
+% Some commonly used notation
+%%%%%%%
+
+\usepackage{subcaption}
+
+\def\R{{\mathbb R}}
+\def\N{{\mathbb N}}
+\def\F{{\mathcal F}}
+\def\E{{\mathbb E}}
+\def\sign{{\rm sign}}
+\def\x{{\bm x}}
+\def\m{{\bm\mu}}
+
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+
+
+%-----------------------------------------------
+% uncomment to hide \hl highlights
+
+\makeatletter
+\AtBeginDocument{\let\hl\@firstofone}
+\makeatother
+%-----------------------------------------------
+
+
+\journal{Journal Peer Review}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% Elsevier bibliography styles
+%%%%%%%%%%%%%%%%%%%%%%%
+%% To change the style, put a % in front of the second line of the current style and
+%% remove the % from the second line of the style you would like to use.
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Numbered
+%\bibliographystyle{model1-num-names}
+
+%% Numbered without titles
+%\bibliographystyle{model1a-num-names}
+
+%% Harvard
+%\bibliographystyle{model2-names.bst}\biboptions{authoryear}
+
+%% Vancouver numbered
+%\usepackage{numcompress}\bibliographystyle{model3-num-names}
+
+%% Vancouver name/year
+%\usepackage{numcompress}\bibliographystyle{model4-names}\biboptions{authoryear}
+
+%% APA style
+%\bibliographystyle{model5-names}\biboptions{authoryear}
+
+%% AMA style
+%\usepackage{numcompress}\bibliographystyle{model6-num-names}
+
+%% `Elsevier LaTeX' style
+%\bibliographystyle{elsarticle-num}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+\begin{frontmatter}
+
+\title{\large High-fidelity Modeling of Pressurized Water Reactor Flow Fields for Data-Driven Applications}
+
+%% Group authors per affiliation:
+\author{Logan A. Burnett$^{a,b}$, Hyungjun Kim$^{a,c}$, Hsien-Cheng Chou$^{d}$, Arsha Witoelar$^{d}$, Robert A. Brewster$^{b}$, Benoit Forget$^{b}$, Emilio Baglietto$^{b}$, Majdi I. Radaideh$^{*a,e}$}
+
+\cortext[mycorrespondingauthor]{Corresponding Authors: Logan Burnett (nucleai@umich.edu), Majdi I. Radaideh (radaideh@umich.edu)}
+
+\address{$^a$Department of Nuclear Engineering and Radiological Sciences, University of Michigan, Ann Arbor, MI 48109, United States}
+\address{$^b$Department of Nuclear Science and Engineering, Massachusetts Institute of Technology, Cambridge, MA 02139, United States}
+\address{$^c$Korea Atomic Energy Research Institute, Daejeon, 34057, South Korea}
+\address{$^d$Department of Mechanical Engineering, University of Michigan, Ann Arbor, MI 48109, United States}
+\address{$^e$Department of Computer Science and Engineering, University of Michigan, Ann Arbor, MI 48109, United States}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Abstract
+\begin{abstract}
+%250 word max
+\small
+This work presents a high-fidelity computational fluid dynamics (CFD) and data-driven modeling framework for assembly-level flow characterization in a four-loop pressurized water reactor (PWR). A full lower-plenum and core-inlet domain was constructed using publicly available geometry and operating conditions, enabling transient simulations with pump-induced swirl boundary conditions. The results show that cold-leg swirl and lower-plenum transport generate strongly heterogeneous assembly-wise inlet flow distributions, particularly near the lower core region, while axial resistance and mixing progressively homogenize the flow at higher elevations.
+
+These physics-informed datasets were subsequently used to evaluate machine learning (ML) applications for partial field reconstruction and short-term autoregressive prediction. A 3D convolutional-based inpainting model successfully reconstructed missing assembly-level mass flow rates from partial observations, with errors concentrated in the highly turbulent base (bottom) layer and diminishing significantly in upper layers. Comparative analysis across multiple ML models demonstrates that spatially aware architectures, particularly ConvLSTM, significantly outperform sequence-based (LSTM) and operator-learning (DeepONet) approaches by effectively capturing coupled spatio-temporal dynamics. The study also highlights key challenges, including the sensitivity of inlet flow predictions to turbulence and mesh resolution, as well as the absence of full-scale experimental validation data. Despite these limitations, the results remain consistent with expected physical behavior. Overall, this work establishes high-fidelity CFD as a critical foundation for developing data-driven surrogates, sparse sensing strategies, and future multiphysics coupling frameworks, while outlining directions for scalable, interpretable, and multi-fidelity learning approaches in nuclear reactor modeling.
+
+\end{abstract}
+\begin{keyword}
+Computational Fluid Dynamics, Pressurized Water Reactors, Thermal-hydraulics, Machine Learning, Transient Analysis
+
+\end{keyword}
+
+\end{frontmatter}
+
+%\linenumbers
+
+% \pagenumbering{gobble}
+\setstretch{1.3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Introduction
+\section{Introduction}
+\label{sec:intro}
+
+Thermal-hydraulics (TH) and fluid flow analysis play a central role in reactor safety analysis by providing detailed insights into the complex multiphase flow and heat transfer phenomena that govern reactor operation. These methods enable engineers to predict critical safety parameters such as coolant distribution, cladding temperatures, and pressure drops under both normal and accident scenarios \cite{todreas2021nuclear}. Unlike purely empirical correlations, Computational Fluid Dynamics (CFD) and advanced TH simulations resolve local velocity, temperature, and turbulence fields, capturing important spatial and temporal variations that influence fuel integrity and system performance \cite{wang2021recent}. This capability is particularly important in assessing safety margins, evaluating transient scenarios, coupling with other physics simulations (e.g., neutronics), and supporting design improvements for new reactor concepts \cite{fang2024cfd,freile2021improved}.
+
+Beyond predictive capability, CFD and TH modeling provide a complementary role to system codes by resolving local effects that are otherwise approximated in 1D analyses. For example, CFD has been extensively applied in pressurized water reactor (PWR) mixing studies \cite{boyd2004cfd}, boiling heat transfer characterization \cite{pham2023assessment}, and passive safety system evaluations \cite{wei2023numerical}. Modern reactor safety evaluations increasingly rely on multi-scale coupling between system thermal-hydraulics \cite{hu2025sam}, subchannel codes \cite{salko2022ctf}, and high-fidelity CFD to bridge the gap between integral safety assessments and localized safety phenomena. In this way, CFD and flow analysis not only support regulatory decision-making \cite{boyd2016perspectives} but also serve as essential tools in validating experimental databases and developing reduced-order or surrogate models for uncertainty quantification \cite{liu2021uncertainty}. 
+
+\begin{table*}[!t]  
+
+\small
+
+\begin{framed}
+\nomenclature{AI}{Artificial Intelligence}
+\nomenclature{CFD}{Computational Fluid Dynamics}
+\nomenclature{CNN}{Convolutional Neural Network}
+\nomenclature{DNS}{Direct Numerical Simulation}
+\nomenclature{DT}{Digital Twin}
+\nomenclature{LES}{Large Eddy Simulation}
+\nomenclature{LR}{Learning Rate}
+\nomenclature{LSTM}{Long Short-Term Memory}
+\nomenclature{ML}{Machine Learning}
+\nomenclature{PINN}{Physics-Informed Neural Networks}
+\nomenclature{PWR}{Pressurized Water Reactor}
+\nomenclature{RANS}{Reynolds-Averaged Navier--Stokes}
+\nomenclature{SAM}{System Analysis Module}
+\nomenclature{TH}{Thermal-Hydraulics}
+\nomenclature{URANS}{Unsteady Reynolds-Averaged Navier--Stokes}
+\nomenclature{VVUQ}{Verification, Validation, and Uncertainty Quantification}
+
+\printnomenclature
+
+\end{framed}
+
+\end{table*}
+
+
+% % % % % % % % % % % % % % % %  Literature % % % % % % % % % % % % % % % %
+
+With recent advances in mathematical modeling of physical processes and increased computational power for simulating high-dimensional dynamical systems, CFD has become an essential tool for developing digital twins of nuclear reactors for safety analysis \cite{liao2024cfd, wang2021recent}. The robustness of CFD simulations has been widely recognized in the literature \cite{hohne2010application}, particularly in single-phase mixing applications where multidimensional flow effects play a significant role \cite{SwirlManera}. CFD is especially valuable for addressing limitations of system codes, which often fail to capture local transfer rates of momentum, energy, and mass. CFD simulations require rigorous validation, and guidance from Idaho National Laboratory (INL) outlines best practices for quantifying uncertainties associated with discretization schemes, turbulence modeling, and iterative convergence \cite{johnson2006processes}. The advantages of CFD over lower-dimensional approaches have been demonstrated in several studies. For instance, improved accuracy in capturing multidimensional flow mixing in a T-junction compared to the 1D thermal-hydraulics code TRACE has been shown \cite{bertolotto2009single}. Similarly, steady-state CFD modeling of a PWR fuel assembly has been validated against experimental benchmarks, supporting its predictive capability \cite{conner2010cfd}. Verification and validation studies for both single-phase and two-phase CFD simulations in PWR fuel assemblies have also been conducted, including performance assessments of Mixing Vane Spacer Grids (MVG) \cite{han2022verification}.
+
+CFD simulations of reactor pressure vessels have been used to analyze the impact of internal structural configurations, such as perforated drums, on mass flow distribution at the reactor core \cite{wang2020cfd}. Although Direct Numerical Simulation (DNS) and Large Eddy Simulation (LES) provide high fidelity, their computational expense has motivated the development of Reynolds-Averaged Navier–Stokes (RANS) approaches. In this work, CFD modeling is performed using the \texttt{STAR-CCM+} software package \cite{starccm}, with turbulence modeling details provided in Section \ref{sec:method}.
+
+%---------------------------
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+Numerous studies have investigated single-phase coolant flow through reactor fuel rod bundles, as in \cite{Wang2024}.  While CFD offers high-fidelity, numerical methods such as LES and DNS demand more computing resources than conventional system codes, making them difficult to use for nuclear reactor safety analysis. To address this challenge, hybrid modeling strategies have been explored, such as the Structure-based (STRUCT-$\epsilon$) turbulence model, which aims to balance fidelity and computational efficiency \cite{Feng2021, pham2024struct}.
+In parallel, a paradigm shift in nuclear reactor simulation has been underway, moving from separate codes to modular, extensible multiphysics frameworks. A leading example is the {M}ultiphysics {O}bject-{O}riented {S}imulation {E}nvironment ({MOOSE}) from {I}daho {N}ational {L}aboratory \cite{harbour2025moose}. Also, the {S}ystem {A}nalysis {M}odule ({SAM}) from {A}rgonne {N}ational {L}aboratory, a modern tool for advanced reactor safety analysis, is an example of proper application \cite{osti_1671335}. Beyond the MOOSE Framework, additional high-fidelity modeling studies of heat pipe microreactors—encompassing both single-physics and coupled multiphysics analyses—have been demonstrated using OpenFOAM \cite{price2023thermal,price2024multiphysics}.
+
+Reinforcement learning has been applied to decouple core power and axial power distribution control in large pressurized water reactors \cite{wang2024decoupling}, while LSTM- and CNN-LSTM-based frameworks have shown strong performance for fault diagnosis and cross-operating-condition prediction in small modular reactors \cite{wang2022fault,luo2024cross}. In addition, recent hybrid approaches combining data-driven learning with physics-based constraints have improved the robustness and physical consistency of reactor coolant loop modeling \cite{yuan2026hybrid}. These studies highlight the increasing integration of AI, physics-informed learning, and digital twin concepts in advanced reactor thermal-hydraulic applications.
+
+Machine learning (ML) has emerged as a promising approach to reduce the computational cost of high-fidelity thermal-fluid and multiphysics simulations while maintaining predictive accuracy. For instance, {C}onvolutional {N}eural {N}etworks ({CNN}s), trained on high-fidelity {DNS} data, can predict complex turbulent flow fields with less resources than {CFD} \cite{Guo2016, Liu2022111716, Guastoni2021}.  This shows the potential to reduce the computational cost of high-fidelity simulations by {LES} or {DNS}. Furthermore, recent advancements include the use of Dense-{CNN}/{LSTM} ({L}ong {S}hort-{T}erm {M}emory) architecture to predict turbulent viscosity during a reactor transient \cite{Liu2022111716}. Another approach involves {P}hysics-{I}nformed {N}eural {N}etworks ({PINN}s), which embed the governing differential equations directly into the model's training process. A recent study demonstrated that a {T}ransfer {L}earning-enhanced {PINN} ({TL-PINN}) could predict nuclear reactor transients with up to a two orders of magnitude acceleration in training time compared to a standard {PINN} \cite{Konstantinos2023}. In nuclear engineering applications, ML-driven surrogate models have demonstrated strong capability in both steady-state and transient analyses. For example, neural-based time-series forecasting methods have been used to predict loss-of-coolant accident (LOCA) dynamics, enabling rapid approximation of system behavior without repeatedly solving full-order models \cite{radaideh2020neural}. Similarly, deep learning methods \cite{radaideh2019combining,radaideh2020analyzing} as well as Gaussian process–based surrogate models \cite{radaideh2020surrogate} provide uncertainty-aware emulation of complex simulations to enable core design \cite{saleem2020application}, sensitivity analysis and uncertainty propagation to model the onset of natural circulation in high-temperature gas-cooled reactors (HTGRs) \cite{eaheart2025sensitivity}, and reactivity control and criticality search for microreactors \cite{price2022multiobjective,radaideh2026multistep}. 
+
+Recent advances extend these approaches to multifidelity frameworks, where surrogate models integrate low- and high-fidelity data to efficiently capture complex thermal-fluid phenomena, such as depressurized loss of forced cooling (DLOFC) scenarios in HTGRs \cite{eaheart2026multifidelity}. Complementary efforts in generative modeling, including data-efficient generative adversarial networks (GANs), have shown promise in augmenting limited datasets for critical heat flux predictions \cite{nabila2025data}, while variational digital twin frameworks introduce probabilistic representations for improved system monitoring and prediction for Depressurized Conduction Cooldown experiments \cite{burnett2026variational}. Recurrent nerual networks which will be used in this study showed a strong performance to drive digital twin development of integrated thermal energy systems \cite{nabila2026physics}. Recent studies further demonstrate the growing role of machine learning in nuclear reactor monitoring and control. 
+
+%Despite these advances, the success of ML-based surrogate and thermal-fluid modeling approaches critically depends on the availability of high-quality reference data, typically generated from high-fidelity simulations such as DNS or detailed multiphysics solvers \cite{Yu2024}. Consequently, a key challenge moving forward is the development of rigorous verification, validation, and uncertainty quantification (VVUQ) frameworks to ensure the reliability and robustness of these data-driven models in safety-critical nuclear engineering applications.
+
+%Majdi drafted the novelty statement. To be revised at the end once all sections are written ..
+
+This research focuses on developing an open-source pipeline for transient, high-fidelity modeling of inlet flow conditions in pressurized water reactors (PWRs). The framework is designed to support data-driven applications, particularly those leveraging machine learning. The goal is to enable multi-fidelity modeling of inlet flow conditions, where transient simulations generate inlet flow fields that can serve as training data for data-driven models. These models can then be applied to tasks such as spatiotemporal analysis, multi-fidelity surrogate modeling, and multiphysics coupling. Accordingly, the key contributions of this study can be summarized as:
+
+\begin{enumerate}
+    
+    \item The team developed a STAR-CCM+ model of the lower plenum for a full-scale commercial PWR unit, previously represented in the BEAVRS benchmark \cite{horelik2013benchmark}. Core dimensions and lower plenum configurations were compiled from a wide range of public sources, including information on fuel assembly modeling from BEAVRS.
+    
+    \item A representative pump swirl pattern was implemented at the cold legs to better represent heterogeneous inlet conditions. This approach captures flow asymmetries that may drive power tilts by inducing non-uniform flow distributions and variable hydraulic forces at the fuel assembly inlets.
+    
+    \item \hl{Transient CFD models were constructed with varying mesh refinements to generate datasets characterizing assembly-level flow conditions in both space and time. These datasets were then used to train spatiotemporal machine learning models—including convolutional neural networks, long short-term memory (LSTM), convolutional LSTM (ConvLSTM), and deep neural operators (DeepOnet)—which demonstrated strong task-specific accuracy for fixed-domain field reconstruction and one-step prediction at negligible inference cost relative to the CFD simulations. These ML models are therefore treated as data-driven reconstruction and prediction tools, rather than as standalone replacements for the CFD solver across arbitrary geometries or boundary conditions.}
+    
+    \item The team plans to release both the raw CFD models and the generated datasets as open-access resources. This will enable broader verification \& validation, foster the creation of more complex datasets, and promote the efficient use of high-fidelity simulation data to train data-driven models for multiphysics coupling applications.
+\end{enumerate}
+
+The remainder of this paper is structured as follows. Section \ref{sec:models} introduces the design data collected to model the lower plenum of a commercial PWR and explains how these data were implemented into a steady-state CFD model using STAR-CCM+. Section \ref{sec:method} describes the conversion of the steady-state model into a transient simulation and the incorporation of pump swirl effects at the cold legs. Section \ref{sec:cfd_results} presents and discusses the CFD simulation results, including transient CFD simulations, while section \ref{sec:ml_res} presents two ML applications on the CFD datasets generated in this study and the limitations and research implications of this work. Finally, Section \ref{sec:conc} summarizes the key findings and highlights potential directions for future research.
+
+
+\section{Reactor Modeling and Simulation} 
+\label{sec:models}
+
+\subsection{Design Data}
+
+We constructed a four-loop PWR flow-domain CAD in \textsc{SolidWorks} using publicly available references from BEAVRS geometric data for vessel/barrel/baffle/core envelope \cite{horelik2013benchmark}, an ORNL system-definition document for operating conditions and core internals dimensions \cite{ornl_sysdefdoc}, and the NRC Westinghouse Technology Systems Manual for selected plate and support features \cite{wec_sysmanual}. The modeled fluid domain extends from the four cold-leg nozzles, through the downcomer and lower plenum, up to the top-of-fuel plane to match the CFD inlet to the core (fuel-assembly) region. Table \ref{tab:design_data} summarizes the main geometrical specifications of the core used in building the CFD model. A visualization of the 4-loop PWR geometry developed from the publicly available data in this study is illustrated in Figure \ref{fig:pwr_visual}.
+
+The workflow included (1) extracting dimensions and topology from the sources; (2) building a parameterized sketch (vessel/barrel radii, baffle gap, core envelope); (3) generating revolved and extruded features (vessel, barrel, baffle, lower plenum) for the four-loop layout; (4) representing core support components and instrumentation/guide tubes with values extracted from design schematics; (5) defining fluid–solid interfaces and trimming to the flow domain. We use dimensions directly where references provided ranges or nominal values and extract other dimensions from images in the documents.
+
+\begin{table}[!h]
+\centering
+\caption{Design and system parameters with values in both Imperial and SI units.}
+\label{tab:design_data}
+\renewcommand{\arraystretch}{1.2} % increases row height for readability
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Parameter} & \textbf{Imperial} & \textbf{SI} & \textbf{Source} \\
+\hline
+Inlet Coolant Temperature ($^\circ$F/$^\circ$C) & 557.6 $^\circ$F & 292 $^\circ$C & \cite{ornl_sysdefdoc} \\
+\hline
+System Pressure (psia/Pa) & 2250 psia & 1.55$\times$10$^7$ Pa & \cite{horelik2013benchmark} \\
+\hline
+Support Plate Thickness (in/cm) & 21.2 in & 53.85 cm & \cite{wec_sysmanual} \\
+\hline
+Lower Core Plate Thickness (in/cm) & 2.46 in & 6.26 cm & \cite{wec_sysmanual} \\
+\hline
+Tie Plate Thickness (in/cm) & 3.57 in & 9.07 cm & \cite{wec_sysmanual} \\
+\hline
+Secondary Core Support Thickness (in/cm) & 4.29 in & 10.9 cm & \cite{wec_sysmanual} \\
+\hline
+Fuel Assembly Length – Lower Nozzle to Top of Fuel (in/cm) & 159.8 in & 405.9 cm & \cite{ornl_sysdefdoc} \\
+\hline
+Fuel Assembly Pitch (in/cm) & 8.644 in & 21.5 cm & \cite{ornl_sysdefdoc} \\
+\hline
+Rod Pitch (in/cm) & 0.496 in & 1.26 cm & \cite{ornl_sysdefdoc} \\
+\hline
+Instrument Thimble Upper OD (in/cm) & 0.482 in & 1.22 cm & \cite{ornl_sysdefdoc} \\
+\hline
+Instrument Thimble Lower OD (in/cm) & 0.429 in & 1.09 cm & \cite{ornl_sysdefdoc} \\
+\hline
+Guide Tube OD (in/cm) & 0.482 in & 1.22 cm & \cite{ornl_sysdefdoc} \\
+\hline
+Baffle Width (in/cm) & 0.875 in & 2.2225 cm & \cite{horelik2013benchmark} \\
+\hline
+Number of Cold Legs & --- & 4 (dimensionless) & \cite{ornl_sysdefdoc} \\
+\hline
+Core Barrel Inner Radius (in/cm) & 74.0 in & 187.96 cm & \cite{horelik2013benchmark} \\
+\hline
+Core Barrel Outer Radius (in/cm) & 76.25 in & 193.675 cm & \cite{horelik2013benchmark} \\
+\hline
+Pressure Vessel Inner Radius (in/cm) & 86.5 in & 219.71 cm & \cite{horelik2013benchmark} \\
+\hline
+Pressure Vessel Outer Radius (in/cm) & 95.0 in & 241.3 cm & \cite{horelik2013benchmark} \\
+\hline
+% Radial Key Height/Width & --- & --- & Bob \\
+% \hline
+Total Mass Flow Rate (lbm/s / kg/s) & 39231.3 lbm/s & 17790 kg/s & - \\
+\hline
+% Pressure Drop & --- & --- & Bob \\
+% \hline
+\end{tabular}
+\end{table}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/GeometryAndFlowVisualization/PWRGeometryAndFlowPath.png}
+    \caption{Visualization of 4-loop PWR geometry developed from publicly available data.}
+    \label{fig:pwr_visual}
+\end{figure}
+
+STAR-CCM+ is used to model the core in this analysis. A mesh was created using the 3D-CAD model of the plant. The original simulation solves for water with constant density and a segregated fluid isothermal configuration. It utilizes a Reynolds-averaged Navier-Stokes turbulence model and a realizable k-$\epsilon$ two-layer model. Geometry and mesh quantities were parameterized to other global quantities. This automated most of the work needed to change the model parameters, allowing for ease in the mesh sensitivity studies. In this model, the Base Mesh Size (see Table \ref{tab:porous_param}) acts as the base parameter upon which the other parameters are dependent. 
+
+Due to the complexity of the fuel assembly geometry, each fuel assembly was recreated as a porous media representation using the Forchheimer equation,
+\begin{equation}
+    \frac{dP}{dx_i} = \left(\alpha_i |v_i| + \beta_i \right)v_i ,
+\end{equation}
+where \(P\) is the pressure, \(x_i\) is the spatial coordinate in direction \(i\), and \(v_i\) is the superficial velocity component through the porous medium in that direction. The coefficients \(\alpha_i\) and \(\beta_i\) represent the inertial and viscous resistance terms, respectively, and were obtained from curve fits of pressure-versus-flow-rate test data for the fuel assembly. Figure \ref{fig:FaToPorousMedia} presents the porous media representation used in the STAR-CCM+ model alongside a diagram of the original fuel assembly geometry used in the PWR unit of interest \cite{ornl_sysdefdoc}. Table \ref{tab:porous_param} lists the corresponding parameters used for the porous media fuel assemblies. Sections of the mesh are shown in Figure \ref{fig:mesh}, including the porous media representation for the fuel assemblies and the volumetric mesh for the reactor vessel.
+
+\begin{table}[!h]
+\centering
+\caption{Fuel assembly porous media parameters (Imperial and SI units).}
+\label{tab:porous_param}
+\renewcommand{\arraystretch}{1.2} % increases row height for readability
+\begin{tabularx}{\textwidth}{|l|l|l|X|}
+\hline
+\textbf{Parameter} & \textbf{Imperial} & \textbf{SI} & \textbf{Definition} \\
+\hline
+Axial Porous Inertial Resistance & 410.0 lbm/ft$^4$ & 5949.0 kg/m$^4$ & Resistance coefficient for axial inertial losses in porous medium \\
+\hline
+Axial Porous Viscous Resistance & 169.3 lbm/(ft$^3\cdot$s) & 2  428.0 kg/(m$^3\cdot$s) & Resistance coefficient for axial viscous drag \\
+\hline
+Lateral Porous Inertial Resistance & 2071.9 lbm/ft$^4$ & 30061.4 kg/m$^4$ & Resistance coefficient for lateral inertial losses \\
+\hline
+Lateral Porous Viscous Resistance & 0.0 lbm/(ft$^3\cdot$s) & 0.0 kg/(m$^3\cdot$s) & Resistance coefficient for lateral viscous drag \\
+\hline
+\end{tabularx}
+\end{table}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\linewidth]{figures/GeometryAndFlowVisualization/FuelAssemblyPorousMedia.png}
+    \caption{PWR fuel assembly geometry to porous media representation used in the CFD model}
+    \label{fig:FaToPorousMedia}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\linewidth]{figures/GeometryAndFlowVisualization/CatawbaMesh.png}
+    \caption{Mesh sections of reactor internals including the lower plenum, downcomer, and fuel assemblies.}
+    \label{fig:mesh}
+\end{figure}
+
+
+\section{Methodology}
+\label{sec:method}
+
+%this section can be as long as it is, to me this is an important section to describe all details of the research 
+\subsection{Turbulence Modeling}
+\label{sec:turbulence}
+Classical unsteady Reynolds‑averaged Navier–Stokes (URANS) closures retain the time derivative in the turbulence transport equations but still rely on the eddy‑viscosity hypothesis and an assumption of equilibrium between production and dissipation of turbulent kinetic energy.  In complex reactor flows with jets, separation or swirl, this assumption breaks down. URANS models tend to over‑predict turbulent viscosity, leading to unphysically large eddies and overly diffused temperature and momentum fields \citep{Wiser2022}.  These deficiencies motivate the development of second‑generation URANS (2G‑URANS) models that preserve URANS robustness while locally resolving unsteady structures.
+
+The baseline closure underpinning STRUCT‑\(\varepsilon\) is an anisotropic \(k\text{–}\varepsilon\) model with a non‑constant \(C_{\mu}\) coefficient that avoids negative stresses and augments the linear stress–strain relationship with quadratic and cubic terms \citep{BagliettoNinokata2006}.  In this framework, the turbulent viscosity is \(\nu_{\tau}=C_{\mu}\,k^{2}/\varepsilon\), and the transport equations for \(k\) and \(\varepsilon\) are
+\begin{align}
+\frac{\partial k}{\partial t}+u_j\frac{\partial k}{\partial x_j} &= \frac{\partial}{\partial x_j}\left[\left(\nu+\frac{\nu_{\tau}}{\sigma_{k}}\right)\frac{\partial k}{\partial x_j}\right]+P_k - \varepsilon,\label{eq:k}\\[0.2em]
+\frac{\partial \varepsilon}{\partial t}+u_j\frac{\partial \varepsilon}{\partial x_j} &= \frac{\partial}{\partial x_j}\left[\left(\nu+\frac{\nu_{\tau}}{\sigma_{\varepsilon}}\right)\frac{\partial \varepsilon}{\partial x_j}\right] + C_{\varepsilon 1}\,\frac{\varepsilon}{k}P_k - C_{\varepsilon 2}\,\frac{\varepsilon^2}{k}.\label{eq:eps}
+\end{align}
+
+Here \(k\) denotes the turbulent kinetic energy, \(\varepsilon\) denotes the turbulent dissipation rate, \(x_j\) is the \(j\)-th spatial coordinate, \(u_j\) is the \(j\)-th component of the Reynolds-averaged velocity field, \(\nu\) is the molecular kinematic viscosity, \(\nu_\tau\) is the turbulent kinematic viscosity, \(C_\mu\) is the turbulent-viscosity coefficient, \(P_k\) denotes the production of turbulent kinetic energy, and \(\sigma_k,\sigma_\varepsilon,C_{\varepsilon 1},C_{\varepsilon 2}\) are standard model constants. This anisotropic URANS closure improves predictions of swirling and curved flows but still assumes scale separation and isotropic dissipation \citep{lenci2015structure, struct_2GURANS}.
+
+STRUCT models introduce a structure‑based resolution criterion.  A resolved time scale \(\tau_r\) is defined from the second invariant of the resolved velocity‑gradient tensor,
+\[
+Q = -\tfrac12\,\bar{A}_{ij}\bar{A}_{ji},\qquad \bar{A}_{ij} = \frac{\partial \bar{u}_i}{\partial x_j},
+\]
+and expressed as \(\tau_r^{-1}=\sqrt{|Q|}\) \citep{BagliettoNinokata2006}.  The modeled time scale is \(\tau_m = k/\varepsilon\); their ratio \(\alpha=\tau_r/\tau_m\) indicates where resolved and modeled scales overlap.  In regions of large \(\alpha\), the eddy viscosity is reduced by a function \(f_m(\alpha)\), which transitions the model from a URANS‑like state to a scale‑resolving regime without reference to the mesh.
+
+STRUCT‑\(\varepsilon\) applies the structure‑based idea by modifying the dissipation equation.  The \(\varepsilon\) transport equation becomes
+\begin{equation}
+\frac{\partial \varepsilon}{\partial t}+u_j\frac{\partial \varepsilon}{\partial x_j}
+= \frac{\partial}{\partial x_j}\left[\left(\nu+\frac{\nu_{\tau}}{\sigma_{k}}\right)\frac{\partial \varepsilon}{\partial x_j}\right]
++ C_{\varepsilon 1}\,\frac{\varepsilon}{k}P_k
+- C_{\varepsilon 2}\,\frac{\varepsilon^2}{k}
++ C_{\varepsilon 3}\,k\,|\Pi|,
+\label{eq:struct_eps}
+\end{equation}
+where \( |\Pi|\) is the magnitude of the second principal invariant of the resolved velocity‑gradient tensor.  The additional term \(C_{\varepsilon 3}\,k\,|\Pi|\) is absent in standard URANS models. It suppresses dissipation wherever the resolved strain or rotation is large, thereby reducing \(\nu_{\tau}\) and forcing the simulation to resolve eddies of roughly the integral length scale \citep{Wiser2022}.  This simple modification allows STRUCT‑\(\varepsilon\) to deliver finer momentum structures and more accurate temperature predictions in stratified sodium experiments and thermal striping in T-junctions while retaining the computational cost of URANS \citep{Wiser2022,FENG2020110572}.
+
+
+\subsection{Swirl Modeling}
+The coolant inlet flow to the Pressurized Water Reactor (PWR) comes from the outlet of Reactor Coolant Pumps (RCPs), which are known to introduce non-uniform inlet conditions at the inlet of cold legs \cite{SwirlManera}, consequently leading to power tilts or non-uniform flow rate distributions at the axial core inlet. RCPs are centrifugal pumps \cite{SwirlManera} that induce swirl patterns at their outlets. Hence, to artificially reproduce these effects, we implement a swirling boundary condition at the inlet of all four cold legs. In this study, we implement this via defining a user-defined function (UDF), which requires a functional form for the boundary condition to be implemented, and is presented below in the polar coordinate form. The parameter \textit{$\alpha_s$} in the equation represents the tangential to axial velocity ratio or the swirl strength parameter, this parameter defines the extent of the swirl strength at the inlet, meaning, $(\alpha_s=0)$ would effectively produce no swirl at the boundary. This parameter is a variable quantity and can act as an inference parameter with respect to its corresponding effects at the axial core inlet. 
+
+\begin{equation}
+    \mathbf{u}(r,\theta)
+    =
+    \alpha_s u_{\mathrm{axial}} \mathbf{e}_{\theta}
+    +
+    u_{\mathrm{axial}} \mathbf{e}_{z},
+    \qquad
+    u_\theta(r) = \alpha_s u_{\mathrm{axial}}.
+\end{equation}
+\begin{equation}
+    \mathbf{e}_{r} = (\cos\theta,\sin\theta,0), \qquad
+    \mathbf{e}_{\theta} = (-\sin\theta,\cos\theta,0), \qquad
+    \mathbf{e}_{z} = (0,0,1).
+\end{equation}
+
+Here, \(\mathbf{u}(r,\theta)\) is the imposed inlet velocity vector expressed in local polar coordinates, \(r\) is the radial coordinate measured from the center of the cold-leg inlet, \(\theta\) is the azimuthal coordinate in the inlet cross section, \(\alpha_s\) is the swirl strength parameter defined as the tangential-to-axial velocity ratio, \(u_{\mathrm{axial}}\) is the prescribed axial inlet velocity, \(u_\theta(r)\) is the tangential velocity component, and \(\mathbf{e}_r\), \(\mathbf{e}_\theta\), and \(\mathbf{e}_z\) are the local radial, tangential, and axial unit vectors, respectively.
+
+The polar coordinate functional form translates to the following Cartesian form, which is used to define the field function in \texttt{STAR-CCM+} \cite{starccm}. An additional coefficient, \(\epsilon\), is included in the denominator to avoid singular behavior at the center of the circular inlet cross section. Figure \ref{fig:cold_leg} demonstrates a side view of the cold leg and the swirl shape applied as a boundary condition. The coordinate system is defined such that the \(z\)-axis is normal to the inlet cross-sectional plane and the \(x\)-\(y\) axes lie within the inlet cross section. The equivalent Cartesian form used in the solver field function is
+
+\begin{equation}
+    \left[ U_x,U_y,U_z \right] = \left[-\alpha_s u_{axial} \frac{y}{\sqrt{x^2 + y^2 + \epsilon}}\hspace{0.1cm},\hspace{0.1cm}\alpha_s u_{axial} \frac{x}{\sqrt{x^2 + y^2 + \epsilon}}\hspace{0.1cm},\hspace{0.1cm}u_{axial} \right]
+\end{equation} \\
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.9\linewidth]{figures/GeometryAndFlowVisualization/ColdLegSwirl.png}
+    \caption{Cold leg inlet cross-sectional view (side view)}
+    \label{fig:cold_leg}
+\end{figure}
+
+\subsection{Transient modeling} 
+
+The lower-plenum flow field is inherently unsteady due to the interaction of the imposed cold-leg swirl, geometric redirection, recirculation, and turbulent mixing within the reactor vessel. A steady-state simulation may capture the mean flow structure, but it cannot represent the temporal redistribution of assembly-wise mass flow rates associated with these unsteady turbulent dynamics. Therefore, transient CFD simulations were conducted to quantify the time-dependent mass flow rate distribution across the fuel assemblies in the core.
+
+The transient flow simulation is then analyzed as follows. A single sensor plane is created and constrained by each fuel assembly at the fluid entrance for said fuel assembly. This process is then repeated at 0.5 meter increments in the axial direction of the PWR until 9 total layers of sensor planes are generated. This provides a total of 193 sensor planes per layer, 1737 sensor planes in total. The sensor planes are programmed to record average mass flow rates within each time step. The model first undergoes CFD simulation until a physical time equivalent of 10 seconds with a time step of 0.0005 seconds, each timestep consisting of 5 internal iterations. This process ensures full development of the fluid profile before data is taken. We then record data using the same time step size between 10-15 seconds, recording the mass flow rate in all 193 assemblies. All parameters used in the transient simulation are given in Table \ref{tab:transient}.
+
+\begin{table}[h!]
+\centering
+\caption{Transient Simulation Parameters}
+\label{tab:transient}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\textbf{Parameter} & \textbf{Value} & \textbf{Definition / Notes} \\
+\hline
+Total Simulation Time & 15 s & Total transient simulation duration \\
+\hline
+Initial Flow-Development Period & 0--10 s & Period used for flow-field development before data collection \\
+\hline
+Data Collection Interval & 10--15 s & Time window used to record assembly-wise mass flow rates \\
+\hline
+Time Step Size ($\Delta t$) & 0.0005 s & Unsteady CFD time step \\
+\hline
+Internal Iterations per Step & 5 & Solver iterations per physical time step \\
+\hline
+Planar Sensor Count Per Layer & 193 planes & One area-averaged sensor plane per fuel assembly \\
+\hline
+Planar Sensor Layer Count & 9 layers & Axial sensor layers spaced by 0.5m \\
+\hline
+Total Sensor Planes & $9 \times 193 = 1737$ planes & Total assembly-level sensor planes monitored \\
+\hline
+Solver Type & SIMPLE-based segregated solver & Collocated finite-volume solver with Rhie--Chow interpolation \\
+\hline
+Temporal Discretization & Second-order implicit & Three-time-level backward differencing scheme \\
+\hline
+Density Model & Constant density & Single-phase incompressible \\
+\hline
+Thermal Treatment & Isothermal & Energy equation and buoyancy effects not modeled \\
+\hline
+Turbulence Model & STRUCT-$\varepsilon$ & Structure-based URANS closure \\
+\hline
+Wall Treatment & High $y^{+}$ wall treatment & Wall-function treatment for the near-wall mesh \\
+\hline
+Dimensionality & Three-dimensional & Full 3D lower-plenum and core-inlet flow domain \\
+\hline
+Output Frequency & Every time step during data collection & Mass flow rates recorded over the 10--15 s interval \\
+\hline
+Data Averaging & Area-averaged mass flow rate & Used for time histories, heatmaps, and ML datasets \\
+\hline
+\end{tabularx}
+\end{table}
+
+
+\subsection{Mesh Sensitivity study}
+
+Due to the complexity and high computational cost of the transient model developed in this study, the authors adopted a simplified approach by testing simulations using different mesh resolutions while leveraging extensive prior CFD expertise. After our preliminary mesh analysis, three primary models were evaluated and executed according to the procedure outlined in the previous sections. These models are summarized in Table \ref{tab:model_mesh}, each assigned a unique name that will be referenced throughout this work. The flow results of the lower-fidelity models are compared against those of the high-fidelity (reference) model to assess the impact of mesh coarsening on the accuracy of the flow predictions. Note that subsequent analyses in this study are carried out using the highest-fidelity model, under the assumption that it provides the most accurate representation.
+
+\begin{table}[h]
+\centering
+\caption{Description of the different CFD Models used in the mesh sensitivity study}
+\begin{tabular}{|r|c|}
+\hline
+\textbf{Model Name} & \textbf{Base Mesh Size} \\
+\hline
+High-fidelity or fine mesh   (FA$_{pitch}/14$) & 0.6174\ in / 1.5683 cm \\
+\hline
+Medium-fidelity or medium mesh (FA$_{pitch}/12$) & 0.7203\ in / 1.8296 cm \\
+\hline
+Low-fidelity or coarse mesh    (FA$_{pitch}/10$) & 0.8644 \ in / 2.1956 cm\\
+\hline
+\end{tabular}
+\label{tab:model_mesh}
+\end{table}
+
+\subsection{Computing Resources}
+\label{sec:com_res}
+
+This study leveraged an internal server at the University of Michigan to perform CFD transient simulations across the selected mesh resolutions. The highest-fidelity case was executed using 200 cores and required approximately 20 days to complete, whereas the lowest-fidelity simulation finished in about 6 days. The server is powered by two AMD EPYC 9654 processors, each supporting 192 core threads at clock speeds ranging from 2.4 to 3.7 GHz, yielding a total of 384 core threads, of which 200 were utilized in this study. It is also equipped with four NVIDIA RTX 6000 Ada Generation GPUs and 1536 GB of DDR5 memory, which were employed for the machine learning tasks discussed in Section \ref{sec:ml_res}.
+
+\section{CFD Simulation Results}
+\label{sec:cfd_results}
+
+In this section, we present the transient CFD results. \textit{Unless stated otherwise, the high-fidelity model mentioned in Table \ref{tab:model_mesh} is presented in this section}. The CFD results in \Cref{fig:AxialAndVerticalVelocity} demonstrate that the imposed cold-leg swirl and lower-plenum geometry produce a strongly three-dimensional inlet flow field rather than a spatially uniform core inlet condition. The side-view velocity magnitude field shows that the largest coolant velocities occur in the downcomer and lower-plenum regions, where the incoming cold-leg momentum is redirected toward the core support region. This behavior is expected because the coolant must turn from the annular downcomer into the lower plenum before entering the fuel assembly region. The lower-plenum flow is therefore characterized by localized high-velocity structures, recirculation, and mixing before the flow enters the porous-media representation of the fuel assemblies.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.9\linewidth]{figures/GeometryAndFlowVisualization/AxialCoreInlet.png}
+    \caption{Radial cross section of the reactor vessel colored by velocity magnitude (left) and axial cross section of the core just above the core inlet (right). Both are snapshots of the flow fields at the end of the transient simulation (15s) for the \textbf{high-fidelity} model.}
+    \label{fig:AxialAndVerticalVelocity}
+\end{figure}
+
+The axial core-inlet velocity field in \Cref{fig:AxialAndVerticalVelocity} further shows that these lower-plenum effects persist at the assembly inlet plane. The vertical velocity component is not distributed uniformly across the core. Instead, the field contains a pronounced central high-velocity region and additional asymmetric structures distributed across the assembly map. These spatial patterns indicate that the inlet condition to the core retains memory of the cold-leg swirl and lower-plenum redirection, even after partial mixing in the vessel internals. This result is important because many reduced-order or system-level analyses assume comparatively smooth or prescribed inlet flow distributions. The present CFD model shows that the actual inlet condition can contain assembly-scale heterogeneity that may affect local coolant delivery, hydraulic forcing, and downstream thermal-hydraulic behavior.
+
+The axial evolution of the assembly-level mass flow rate is shown in \Cref{fig:9planes-viz}. Near the lower entrance of the core, the mass flow distribution exhibits substantial spatial variation across the fuel assemblies. The base plane contains strong localized peaks and depressions, consistent with the non-uniform axial velocity field observed at the core inlet. As the coolant moves upward through the fuel assembly region, the spatial gradients decrease sharply. By the upper planes, the mass flow field becomes significantly smoother and the range of assembly-to-assembly variation is much smaller. This axial damping is consistent with the role of the porous fuel assembly region. Axial resistance and continued mixing reduce the magnitude of inlet maldistribution as the flow progresses through the core.
+
+It is important to note that each axial layer in \Cref{fig:9planes-viz} is plotted with an individual colorbar. This choice is necessary because the range of mass flow values decreases substantially with increasing axial distance from the core entrance. Therefore, the figure should not be interpreted as showing the same absolute variation at every elevation. Instead, one can observe change in spatial structure as a function of height, or distance from the core inlet. The lower planes contain stronger localized heterogeneity, while the upper planes retain weaker, smoother remnants of the original inlet pattern. This distinction is important for downstream data-driven modeling because a model trained on these fields must learn both the high-gradient inlet behavior and the progressively homogenized flow fields at higher elevations.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.9\linewidth]{figures/GeometryAndFlowVisualization/Visualization3x3plot.png}
+    \caption{Selected axial planes for monitoring coolant mass flow rate distribution (kg/s) across the fuel assemblies from the lower entrance of the core near Plane 1 to the upper exit of the core near Plane 9. Each axial layer has an individual colorbar given that the range of mass flow rate values decreases sharply with increasing axial distance from the core entrance. The flow fields shown in this figure correspond to the \textbf{high-fidelity} model.}
+    \label{fig:9planes-viz}
+\end{figure}
+
+The axial evolution of the assembly-level mass flow rate in Figure~\ref{fig:9planes-viz} shows that the inlet distribution is strongest near the lower entrance of the core and decreases rapidly with axial distance. To assess whether these observed structures are robust to mesh resolution, we compare the base-layer mass flow distributions obtained from the high-, medium-, and low-fidelity meshes. The comparison is performed using both the maximum percent difference over the transient and the time-averaged percent difference at each fuel assembly location.
+
+\begin{figure}[h!]
+    \centering
+    % ===== Row 1: Fine vs Medium =====
+    \begin{subfigure}{0.42\textwidth}
+        \centering
+        \includegraphics[width=0.97\linewidth]{figures/Error_vis_porous/Max_Flow_BaseLayer_Fine_vs_Medium.png}
+        \caption{Maximum error: fine vs. medium}
+        \label{fig:maxBase1}
+    \end{subfigure}
+    \hspace{0.02\textwidth}
+    \begin{subfigure}{0.42\textwidth}
+        \centering
+        \includegraphics[width=0.97\linewidth]{figures/Error_vis_porous/Time_Avg_BaseLayer_Fine_vs_Medium.png}
+        \caption{Time-averaged error: fine vs. medium}
+        \label{fig:timeAvgBase1}
+    \end{subfigure}
+
+    \vspace{0.5em}
+
+    % ===== Row 2: Fine vs Coarse =====
+    \begin{subfigure}{0.42\textwidth}
+        \centering
+        \includegraphics[width=0.97\linewidth]{figures/Error_vis_porous/Max_Flow_BaseLayer_Fine_vs_Coarse.png}
+        \caption{Maximum error: fine vs. coarse}
+        \label{fig:maxBase2}
+    \end{subfigure}
+    \hspace{0.02\textwidth}
+    \begin{subfigure}{0.42\textwidth}
+        \centering
+        \includegraphics[width=0.97\linewidth]{figures/Error_vis_porous/Time_Avg_BaseLayer_Fine_vs_Coarse.png}
+        \caption{Time-averaged error: fine vs. coarse}
+        \label{fig:timeAvgBase2}
+    \end{subfigure}
+
+    \vspace{0.5em}
+
+    % ===== Row 3: Medium vs Coarse =====
+    \begin{subfigure}{0.43\textwidth}
+        \centering
+        \includegraphics[width=0.97\linewidth]{figures/Error_vis_porous/Max_Flow_BaseLayer_Medium_vs_Coarse.png}
+        \caption{Maximum error: medium vs. coarse}
+        \label{fig:maxBase3}
+    \end{subfigure}
+    \hspace{0.02\textwidth}
+    \begin{subfigure}{0.42\textwidth}
+        \centering
+        \includegraphics[width=0.97\linewidth]{figures/Error_vis_porous/Time_Avg_BaseLayer_Medium_vs_Coarse.png}
+        \caption{Time-averaged error: medium vs. coarse}
+        \label{fig:timeAvgBase3}
+    \end{subfigure}
+
+    \caption{Mesh-sensitivity comparison of assembly-wise mass flow rate errors at the core inlet base layer. The left column shows the maximum percent error observed over the transient, while the right column shows the corresponding time-averaged percent error. Rows compare the fine and medium meshes, fine and coarse meshes, and medium and coarse meshes, respectively. ``Abs. Layer Avg.'' represents the absolute core-averaged error for the bottom layer, computed to avoid cancellation between positive and negative errors.}
+    \label{fig:Error_Vis_BaseLayer}
+\end{figure}
+
+Figure~\ref{fig:Error_Vis_BaseLayer} shows that mesh-resolution effects are spatially localized rather than uniformly distributed across the core inlet. Two types of plots are provided in Figure~\ref{fig:Error_Vis_BaseLayer}:
+
+\begin{itemize}
+    \item Maximum Difference plots: These plots compare the flow rates between two fidelity levels for each assembly across all time steps, and report the \textbf{maximum observed difference} over the entire transient.  
+    
+    \item Time-Averaged Error plots: These plots compare the flow rates between two fidelity levels for each assembly across all time steps, and report the \textbf{mean difference} computed over the entire transient.  
+\end{itemize}
+
+The largest local deviations occur in the maximum-difference fields, where isolated assemblies exhibit errors on the order of 21--27\%, depending on the mesh comparison. These localized extrema are most pronounced when the fine mesh is compared against the coarse mesh, which is expected because this comparison represents the largest change in spatial resolution. However, the corresponding core-average errors remain much smaller, with average values near the 6\% level. This indicates that the dominant flow structures are broadly preserved across the mesh resolutions, while local assembly-level differences persist in regions with stronger gradients or more complex inlet structure.
+
+The time-averaged difference maps shown in Figure~\ref{fig:Error_Vis_BaseLayer} provide a more representative measure of the persistent mesh-induced differences throughout the transient. In comparison to the maximum-difference maps, the time-averaged fields appear smoother and generally exhibit smaller local deviations. All three fidelity comparisons yield relatively small core-averaged errors of approximately 5\%, indicating modest spatial convergence. In particular, the fine-to-medium and medium-to-coarse mesh comparisons produce similar core-average differences in the range of 5.1\%--5.55\%. The spatial distribution of these errors is also non-random. The largest deviations are concentrated in localized regions of the inlet map, suggesting that mesh sensitivity is closely associated with the heterogeneous lower-plenum flow structures responsible for the inlet flow maldistribution.
+
+For completeness, Appendix~\ref{app:A} provides complementary figures for the remaining axial layers, which exhibit more homogeneous flow distributions. One important observation can be drawn from the maximum-error plots in Figures~\ref{fig:maxGrid1}, Figures~\ref{fig:maxGrid2}, and \ref{fig:maxGrid3}. Specifically, the fine-to-medium mesh comparison for Layers 2--9 in Figure~\ref{fig:maxGrid1} produces significantly lower maximum-error averages than both the fine-to-coarse comparison in Figure~\ref{fig:maxGrid2} and the medium-to-coarse comparison in Figure~\ref{fig:maxGrid3}.
+
+Together, the axial flow maps and mesh-sensitivity results support the use of the high-fidelity mesh as the reference case for the machine-learning studies that follow. The high-fidelity simulation resolves the strongest inlet heterogeneity while providing a consistent basis for generating assembly-level training data. The mesh comparison also provides useful context for interpreting downstream data-driven results. Model errors near the base layer should be understood not only as a machine-learning challenge, but also as occurring in the same region where the CFD solution is most sensitive to spatial resolution.
+
+These CFD results have several implications for reactor flow modeling and data-driven applications. First, they show that pump-induced swirl and lower-plenum transport can produce non-trivial assembly-level inlet conditions, supporting the need for high-fidelity CFD when generating reference data for reduced-order models. Second, the sharp axial reduction in flow heterogeneity indicates that the lower core region is likely the most challenging region for surrogate modeling, partial reconstruction, and transient prediction. This is consistent with the expectation that machine-learning models will have larger errors near the base plane, where the flow contains stronger gradients, more complex spatial structure, and greater mesh sensitivity. Third, the coherent spatial patterns in the assembly maps suggest that spatially aware learning methods, such as CNNs, ConvLSTMs, graph neural networks, and neural operators, are more appropriate than models that treat assembly responses as independent scalar time series.
+
+From a multiphysics perspective, the observed flow distribution motivates future coupling between the CFD-derived inlet fields and neutronics or subchannel calculations. Local variations in assembly coolant flow can influence moderator temperature, density feedback, and assembly-wise heat removal. While the present results do not by themselves quantify the neutronic impact of the flow asymmetry, they provide the spatially resolved inlet information needed to evaluate such effects in subsequent coupled analyses. In this sense, the CFD dataset serves not only as a stand-alone thermal-hydraulic result, but also as a foundation for multi-fidelity surrogate modeling, sparse sensing studies, and future reactor digital twin workflows.
+
+\section{Machine Learning Applications on the CFD Data}
+\label{sec:ml_res}
+
+In this section, we present two distinct machine learning applications using the \textbf{high-fidelity simulation dataset} generated in this study. The first focuses on reconstructing the full-core flow field with a CNN, leveraging measurements from selected assemblies to infer conditions in unsensed regions. The second explores short-term autoregressive prediction of flow variables at the next time step using multiple approaches, including LSTM, ConvLSTM, and DeepONet. Finally, we discuss key limitations and research implications, highlighting opportunities for future development, building on the proposed models and dataset. \hl{The ML models evaluated here should be interpreted as task-specific data-driven models operating on the fixed assembly-wise CFD data structure, not as general CFD surrogates intended to replace the governing-equation solve for new reactor geometries or arbitrary inlet boundary conditions.}
+
+\subsection{Flow Field Reconstruction with CNN}
+\label{sec:flow_recon}
+
+We formulate flow-field reconstruction as a supervised inpainting problem on a multi-level reactor flow field. At each time step, the model receives partially observed assembly-level mass flow rates on a fixed $15\times15$ reactor-plane geometry and predicts the values at unobserved locations. In this work, four axial levels are reconstructed jointly so that the model can exploit both in-plane spatial structure and inter-level correlations. The learning objective is to recover the hidden values while exactly preserving the measurements that are already available.
+
+Let $L=4$ denote the number of reconstructed axial levels and $T$ the number of timesteps. For each level, the data are arranged as a time series of planar fields with shape $(T,H,W)$, where $(H,W)=(15,15)$. A fixed geometry mask $\mathcal{M}_{\mathrm{geom}}\in\{0,1\}^{H\times W}$ restricts the problem to physically meaningful assembly locations. To emulate partial instrumentation, we impose a synthetic missing-data pattern within the valid geometry using a checkerboard-style mask with 50\% of valid cells hidden. The corresponding observed mask is defined as
+\[
+\mathcal{M}_{\mathrm{obs}}=\mathcal{M}_{\mathrm{geom}}\land \neg \mathcal{M}_{\mathrm{miss}}.
+\]
+Timesteps are then divided sequentially into training, validation, and test subsets using fractions of 0.45/0.10/0.45.
+
+Normalization is performed independently for each axial level using only observed cells from the training split. If $x_\ell$ denotes the field at level $\ell$, the normalized quantity is
+\[
+z_\ell=\frac{x_\ell-\mu_\ell}{\sigma_\ell}, \qquad \ell=1,\dots,L,
+\]
+where $(\mu_\ell,\sigma_\ell)$ are computed from training observations only and then reused for validation and testing. This prevents information leakage and ensures that all reported errors can be mapped back to the physical scale after inference through de-normalization.
+
+For each timestep, the 3D network input is constructed as
+\[
+\mathbf{x}=\big[z\odot\mathcal{M}_{\mathrm{obs}},\ \mathcal{M}_{\mathrm{obs}},\ \mathcal{M}_{\mathrm{geom}}\big]
+\in \mathbb{R}^{3\times L\times H\times W},
+\]
+where the three channels correspond to the observed values, the observed-mask indicator, and the geometry mask, respectively. The target tensor is
+\[
+\mathbf{y}=z\odot\mathcal{M}_{\mathrm{geom}}
+\in \mathbb{R}^{1\times L\times H\times W}.
+\]
+The missing mask is carried separately and is used to restrict both optimization and evaluation to intentionally hidden cells.
+
+Reconstruction is performed using a fully convolutional 3D network consisting of an initial 3D convolutional stem, a stack of residual dilated 3D blocks, and a final $1\times1\times1$ convolutional head that produces a single reconstructed field. The dilation strategy is anisotropic. Dilation along the axial dimension is held fixed, while the in-plane dilations are varied to enlarge the lateral receptive field without distorting level-to-level alignment. Group normalization and Sigmoid Linear Unit (SiLU) activations are used throughout the network, with dropout applied in the residual blocks. Optional coordinate channels may also be concatenated to provide explicit positional information.
+
+To guarantee that measured values are preserved, the final prediction is formed through an observed-value copy-through rule,
+\[
+\hat{\mathbf{y}}=(z\odot\mathcal{M}_{\mathrm{obs}})+\mathcal{M}_{\mathrm{miss}}\odot f_\theta(\mathbf{x}),
+\]
+so that the network only learns to fill the missing region. Training minimizes a masked mean-squared error over hidden cells,
+\[
+\mathcal{L}=
+\frac{\sum \big((\hat{\mathbf{y}}-\mathbf{y})\odot\mathcal{M}_{\mathrm{miss}}\big)^2}
+{\sum \mathcal{M}_{\mathrm{miss}}},
+\]
+using the AdamW optimizer with a scheduler to reduce the learning rate upon plateau. The checkpoint with minimum validation loss is retained for testing.
+
+The complete reconstruction workflow is summarized in Figure ~\ref{fig:field-recon-flow}. The figure connects the physical CFD domain, the axial sampling locations, the imposed partial-observation mask, and the resulting plane-wise reconstruction errors. This provides a direct visual link between the reactor geometry, the inpainting formulation, and the spatial structure of the model error.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\linewidth]{figures/GeometryAndFlowVisualization/CFD-FieldReconstruction-Flow.png}
+    \caption{Partial CFD field reconstruction workflow and plane-wise error evaluation. A four-loop PWR CFD domain is sampled at four axial planes near the core inlet, where partial assembly-wise observations are imposed using a checkerboard mask. Blue cells denote observed assembly locations, while red cells denote unobserved locations to be reconstructed by the inpainting model. The right-hand panels show the plane-wise mean absolute error (MAE) distributions for the reconstructed mass flow rate field, indicating how reconstruction error varies spatially across the assembly grid and axially across the four sampled planes.}
+    \label{fig:field-recon-flow}
+\end{figure}
+
+\begin{table}[h!]
+    \centering
+    \caption{Plane-wise reconstruction performance on intentionally hidden assembly locations.}
+    \label{tab:field-recon-results}
+    \begin{tabular}{c c c c}
+        \hline
+        Axial Plane & MAE (kg/s) & MAPE (\%) & $R^2$ \\
+        \hline
+        Plane 1 & 2.6062 & 3.3473 & 0.7593 \\
+        Plane 2 & 0.0641 & 0.0825 & 0.9966 \\
+        Plane 3 & 0.0120 & 0.0154 & 0.9986 \\
+        Plane 4 & 0.0043 & 0.0055 & 0.9982 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+After training, predictions on the test set are de-normalized level by level and evaluated only over intentionally hidden cells. Reconstruction performance is reported for each axial level using mean absolute error (MAE), mean absolute percentage error (MAPE), and coefficient of determination ($R^2$), as summarized in Table~\ref{tab:field-recon-results}. In addition to these scalar metrics, spatial MAE maps are generated to diagnose where reconstruction errors occur within the assembly grid.
+
+As shown in Figure~\ref{fig:field-recon-flow}, the imposed checkerboard mask creates a deliberately partial reconstruction problem in which approximately half of the valid assembly locations are withheld. The quantitative results show a strong dependence on axial position. Plane 1 (base layer) has the largest reconstruction error, with an MAE of $2.6062$ kg/s, MAPE of $3.3473\%$, and $R^2=0.7593$. In contrast, the downstream planes are reconstructed with substantially higher accuracy. Plane 2 achieves an MAE of $0.0641$ kg/s and $R^2=0.9966$, while Planes 3 and 4 achieve MAE values of $0.0120$ kg/s and $0.0043$ kg/s, respectively, with $R^2$ values near $0.998$.
+
+This trend is consistent with the spatial error maps in Figure~\ref{fig:field-recon-flow}. The reconstruction task is most difficult at Plane 1 (base layer), where the inlet flow field is more heterogeneous and contains stronger local assembly-to-assembly variation. Farther downstream, the flow becomes progressively more homogenized, reducing the difficulty of inferring missing assembly values from neighboring observations. The spatial MAE maps also show that the remaining errors are localized rather than uniformly distributed, with elevated errors occurring near regions where the partial observations provide weaker constraints on local flow structure. Therefore, the MAE maps complement the scalar metrics by identifying where reconstruction errors occur and by revealing how reconstruction difficulty changes across axial levels.
+
+Hyperparameters were tuned in staged searches over optimization, architectural, and scheduler settings, and the final reported model corresponds to the configuration with the lowest validation loss. The training set comprised the first 4,500 transient snapshots of the flow corresponding to data taken from the [10, 12.25] second period of the transient. The validation set contains data from the [12.25, 12.75] second period (1,000 timesteps), and the test set contains the remaining 4,500 from the [12.75, 15] second period. Splitting in this fashion prevents the model from training on data that is more highly correlated in time with the test set and thus provides a more practical evaluation of the proposed field reconstruction framework.
+
+
+\subsection{One-Step Flow Field Prediction}
+
+In recent years, scientific machine learning has increasingly incorporated neural operator frameworks, such as DeepONet \cite{Lu2021DeepONet}, alongside traditional Computational Fluid Dynamics (CFD) approaches. In this work, we compare the performance of several machine learning models, including LSTM \cite{hochreiter1997long}, ConvLSTM \cite{shi2015convolutional}, and DeepONet. All models are trained using a single NVIDIA RTX PRO 6000 Blackwell GPU available on an internal server at the University of Michigan.
+
+The dataset is structured for one-step-ahead prediction, where the model predicts the next state using the true immediately preceding state as input. This Markovian approach assumes that the immediate previous state contains sufficient information to evolve the system by one time step. To stabilize training, the data were normalized using a MinMaxScaler. The temporal sequence was partitioned into a 60/20/20 split for training, validation, and testing, respectively.
+
+To capture the complex spatio-temporal dependencies, three architectures were implemented: LSTM, ConvLSTM, and DeepONet. The LSTM model consists of two stacked recurrent layers with a hidden dimension of 128, followed by a projection head with two hidden layers of 128 units each and GELU activation that maps the final hidden state to the target spatial grid. The ConvLSTM architecture preserves spatial topology by replacing standard LSTM inner products with 2D convolutional operations. It employs two ConvLSTM layers with 128 channels each and $3 \times 3$ kernels, followed by a convolutional output layer. DeepONet consists of branch and trunk networks, each with hidden layers of 128 and 256 units and GELU activation functions. The outputs are merged via an inner product across 128 units to reconstruct the field.
+
+\hl{The superior performance of ConvLSTM is expected because its inductive bias is better aligned with the physics and data structure of this problem. The assembly-wise flow field is not a set of independent scalar time series; neighboring assemblies remain spatially coupled through lower-plenum transport, pump-induced swirl, mixing, and axial flow development. A standard LSTM can represent temporal dependence, but flattening the reactor plane weakens the explicit representation of local spatial neighborhoods. Similarly, the DeepONet implementation provides a flexible nonlinear mapping but does not impose the same local convolutional coupling used by ConvLSTM. By combining recurrent temporal memory with convolutional updates over the two-dimensional assembly map, ConvLSTM can learn local spatial interactions and time evolution simultaneously, which is especially important in the heterogeneous base layer.}
+
+All models were trained using the AdamW optimizer to reduce overfitting. Training was conducted for 100 epochs using a Mean Squared Error (MSE) loss function. Hyperparameter tuning was performed, and the best configurations were selected for comparison.
+
+From \Cref{tab:ml_compNO}, the training results across the first three layers from the bottom of the fuel assembly (FA) highlight a clear progression in model performance as the flow develops. The ``Base'' layer remains the most challenging to predict, as observed in the previous application in Section \ref{sec:flow_recon}, due to its high turbulent energy and strong spatio-temporal variability. In this region, both LSTM and DeepONet show noticeably lower accuracy (e.g., $R^2 = 0.4013$ and $0.5837$, respectively) and higher errors. As the flow becomes more structured in higher layers, all models improve, with LSTM and DeepONet achieving $R^2$ values near or above $0.9$ in Layer 1, although some degradation is still observed in Layer 2 for DeepONet. In contrast, the ConvLSTM consistently maintains near-perfect accuracy across all layers ($R^2 \approx 1$) with orders-of-magnitude lower MAPE, demonstrating its strong capability to capture coupled spatial and temporal correlations. These results reinforce that purely temporal models, such as LSTM, and operator-learning approaches without explicit spatio-temporal coupling, such as DeepONet, struggle to resolve highly turbulent dynamics, whereas ConvLSTM effectively leverages spatial context to provide robust and generalizable predictions across varying flow regimes.
+
+\begin{table}[h!]
+	\centering
+	\caption{Model performance comparison across the first three layers. The metrics are computed by comparing the predicted flow rates against the ground-truth high-fidelity simulation data over the final 2000 time steps of the test sequence. All metrics are evaluated on an unseen test set to assess the model's generalization performance.}
+	\label{tab:ml_compNO}
+	\renewcommand{\arraystretch}{1.2}
+	\resizebox{0.5\textwidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Layer & Metric & LSTM & ConvLSTM & DeepONet \\ \hline
+			
+			\multirow{2}{*}{Base} 
+			& $R^2$ (-)   & 0.4013 & \textbf{0.9999} & 0.5837 \\
+			& MAPE (\%)   & 4.803 & \textbf{0.07190} & 3.960 \\ \hline
+			
+			\multirow{2}{*}{Layer1} 
+			& $R^2$ (-)   & 0.8998 & \textbf{1.000} & 0.9098 \\
+			& MAPE (\%)   & 0.4166 & \textbf{0.006000} & 0.3760 \\ \hline
+			
+			\multirow{2}{*}{Layer2} 
+			& $R^2$ (-)   & 0.8771 & \textbf{0.9999} & 0.6224 \\
+			& MAPE (\%)   & 0.1591 & \textbf{0.004700} & 0.2511 \\ \hline
+			
+		\end{tabular}
+	}
+\end{table}
+
+In \Cref{fig:first4_layer_ConvLSTM}, the time-averaged mass flow rate on the fuel assembly (FA) is compared across the first four layers using the ConvLSTM model. The results show excellent agreement between predictions and ground-truth distributions, with mean percentage differences that are negligibly small. The spatial error fields are generally low in magnitude, with slightly higher localized deviations observed in the Base layer, which is consistent with the higher turbulence intensity and complex inlet flow structures. As the flow develops downstream, the error becomes more uniformly distributed and reduced in magnitude, indicating improved predictability in more stable flow regions.
+
+This behavior is further supported by the boxplot in \Cref{fig:summary_boxplot_ConvLSTM}, which shows a wider spread and higher median error for the Base layer, with some outliers reaching higher absolute errors. In contrast, all subsequent layers exhibit tightly clustered distributions with significantly lower median and interquartile ranges, confirming that the model achieves consistently low errors once the flow stabilizes. The decreasing variance across layers demonstrates that the ConvLSTM architecture effectively captures the dominant spatio-temporal correlations while maintaining robustness against temporal fluctuations. Overall, these results highlight that the model not only preserves the global flow structure but also improves reliability in regions with more developed and less chaotic flow dynamics.
+
+\begin{figure}[h!]
+	\centering
+	
+	% Row 1: Layers 0 and 1
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/layer_0_spatial_diff_cubic_FA14_ConvLSTM_test.png}
+		\caption{Plane 1 (Base Layer)}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/layer_1_spatial_diff_cubic_FA14_ConvLSTM_test.png}
+		\caption{Plane 2}
+	\end{subfigure}
+	
+	\vspace{10pt}
+	
+	% Row 2: Layers 2 and 3
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/layer_2_spatial_diff_cubic_FA14_ConvLSTM_test.png}
+		\caption{Plane 3}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/layer_3_spatial_diff_cubic_FA14_ConvLSTM_test.png}
+		\caption{Plane 4}
+	\end{subfigure}
+	
+	\caption{Assembly-wise distributions of the mean absolute percentage error (MAPE, \%) across the first four axial layers are shown for the best-performing ConvLSTM autoregressive model. The error is computed by comparing the predicted flow rates against the ground-truth high-fidelity simulation data over the final 2000 time steps of the test sequence. All metrics are evaluated on an unseen test set to assess the model’s generalization performance.}
+	\label{fig:first4_layer_ConvLSTM}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.65\textwidth]{figures/summary_boxplot_cubic_FA14_ConvLSTM.png}
+	\caption{Box plots of the absolute percentage error distribution (e.g., MAPE) across the nine axial layers, based on the best-performing ConvLSTM autoregressive model. The metrics are evaluated on an unseen test set derived from the high-fidelity simulation model.}
+	\label{fig:summary_boxplot_ConvLSTM}
+\end{figure}
+
+\subsection{Research Implications}
+\label{sec:implications}
+
+The results of this study highlight several key implications for advancing data-driven modeling of reactor thermal-hydraulics, offering clear directions for future work and potential extensions by the broader scientific community.
+
+First, the strong performance of ConvLSTM highlights the growing importance of GPU-accelerated computing for training and deploying spatio-temporal machine learning models. As datasets from high-fidelity CFD simulations continue to grow in size and complexity, efficient GPU utilization becomes essential to enable scalable training and potentially real-time inference in applications such as digital twins and online monitoring systems. This requirement extends beyond ConvLSTM to more advanced architectures, including neural operators (e.g., Transolvers) and diffusion-based models, which often demand significantly higher computational cost and training time. As such, future developments in this space will increasingly rely on access to high-performance computing infrastructure to support both model training and deployment.
+
+Second, the spatial structure observed in the assembly-level flow fields suggests that graph-based learning approaches could be highly effective. Graph Neural Networks (GNNs) offer a natural representation of reactor cores as interconnected assemblies, where physical adjacency and coupling can be explicitly encoded. This may provide improved generalization compared to grid-based convolutional models, especially for irregular geometries or partially observed systems. 
+
+Third, the strong dependence of prediction accuracy on axial location—especially the difficulty associated with the highly turbulent base layer—combined with the substantial computational cost of transient simulations (on the order of 6–20 days), underscores the need for multi-fidelity modeling strategies. Integrating low-, medium-, and high-fidelity simulations within a unified framework can enhance robustness while significantly reducing computational expense. Such approaches enable the use of inexpensive coarse simulations that are systematically corrected using high-fidelity data, ultimately leading to more efficient and scalable surrogate models.
+
+Fourth, the observed spatial heterogeneity of the inlet flow suggests that clustering-based approaches could improve learning performance. By grouping assemblies with similar flow characteristics prior to training, models can focus on learning localized flow behaviors rather than attempting to capture all regimes simultaneously. Such clustering-then-learning strategies may reduce model complexity and improve accuracy, particularly in regions with strong gradients and turbulence. Fourth, the observed spatial heterogeneity of the inlet flow suggests that clustering-based approaches could improve learning performance. By grouping assemblies with similar flow characteristics prior to training, models can focus on learning localized flow behaviors rather than attempting to capture all regimes simultaneously. Such clustering-then-learning strategies may reduce model complexity and improve accuracy, particularly in regions with strong gradients and turbulence. Methods such as principal component analysis (PCA), proper orthogonal decomposition (POD), or more advanced techniques rooted in graph theory may be leveraged for this purpose to identify dominant flow structures and guide the clustering process.
+
+Fifth, the use of machine learning in safety-critical nuclear applications necessitates the integration of explainable AI (XAI) techniques. While the models presented in this work achieve high predictive accuracy, their interpretability remains limited. Incorporating methods such as saliency analysis, feature attribution, or physics-informed interpretability could provide insight into how models make predictions, thereby increasing trust and supporting regulatory acceptance. Examples of these methods will include interpretable machine learning models and post-hoc explainability techniques such as DeepLIFT, both of which have been previously evaluated in nuclear engineering applications \cite{myers2025pymaise,panczyk2025opening}.
+
+Finally, the results highlight a strong opportunity for coupling with neutronics and other multiphysics models. Assembly-level variations in mass flow rate can directly impact moderator temperature, density feedback, and reactivity distributions. Integrating the present thermal-hydraulic predictions with neutronic solvers would enable more comprehensive analyses of the reactor power behavior in the BEAVRS core and could support advanced multiphysics digital twin frameworks.
+
+\hl{The computational cost comparison between CFD and ML should be interpreted within the specific learning tasks considered in this work. The CFD simulation solves the governing fluid equations and generates the reference transient flow fields. As discussed in Section~\ref{sec:com_res}, the high-fidelity CFD case required approximately 20 days on 200 CPU cores, while the lowest-fidelity case required approximately 6 days. In contrast, after training, the ML models evaluate fixed-domain reconstructed or one-step-predicted assembly fields at negligible cost relative to the CFD solve. The reported ML accuracy therefore measures agreement with the high-fidelity CFD reference data for the reconstruction and one-step prediction tasks, not independent experimental validation or general replacement of CFD for arbitrary operating conditions.}
+
+Despite these promising implications, several limitations must be acknowledged. \hl{Most notably, the CFD simulations used in this study have not been directly validated against full-scale experimental data. Obtaining detailed, assembly-level flow measurements in operating reactor systems remains extremely challenging due to instrumentation limitations and restricted industry access. Therefore, the present CFD results should be interpreted as high-fidelity numerical reference data generated from a best-estimate CFD model, rather than as a fully experimentally validated plant-scale prediction. Ongoing work is comparing the present URANS/STRUCT-$\epsilon$ results against LES simulations of the same domain to provide additional numerical benchmarking. The ML framework developed here is independent of the specific CFD fidelity level, provided that the same assembly-wise spatiotemporal data structure is retained.}
+
+A second limitation is associated with the mesh sensitivity results shown in Figure~\ref{fig:Error_Vis_BaseLayer}, where full spatial convergence was not achieved in the bottom layer. Both the time-averaged and maximum error metrics indicate elevated discrepancies in this region, which is consistent with the highly turbulent and heterogeneous inlet conditions. In this study, computational resource constraints limited the ability to run longer transient simulations that would allow for additional flow development, mixing, and stabilization. This highlights an important direction for future work. Rather than initiating data collection after approximately 10 seconds of transient evolution, future studies could extend simulations to longer durations (e.g., 60 seconds) before sampling, which is expected to improve both spatial and temporal convergence of the solution.
+
+Nevertheless, the results remain consistent with expected physical behavior, including strong inlet heterogeneity, lower-plenum mixing effects, and axial flow homogenization. This agreement with established thermal-hydraulic principles provides confidence in the qualitative validity of the findings.
+
+Future work in CFD modeling should focus on incorporating experimental benchmarks, reduced-scale test data, or plant measurements to further validate the simulations. In addition, leveraging GPU-accelerated CFD capabilities, such as those available in STAR-CCM+, could enable significantly longer and more detailed simulations. Recent developments suggest that GPU-based CFD can achieve speedups on the order of 3$\times$–4$\times$ compared to traditional CPU-based approaches, which would directly support improved convergence studies and higher-fidelity data generation for both CFD and machine learning applications.
+
+\section{Conclusions}
+\label{sec:conc}
+
+This work develops a high-fidelity CFD modeling and data-driven analysis pipeline for assembly-level flow characterization in a four-loop pressurized water reactor. Using publicly available geometric and operating data, a full lower-plenum and core-inlet flow domain was constructed and used to generate transient CFD datasets with pump-induced swirl boundary conditions. The resulting simulations show that cold-leg swirl and lower-plenum transport produce strongly heterogeneous assembly-wise inlet flow distributions, especially near the lower core region, while axial resistance and mixing through the fuel assembly region progressively homogenize the flow at higher elevations. These spatially structured CFD fields were then used to demonstrate machine learning applications for partial field reconstruction and transient prediction. The 3D CNN inpainting model accurately reconstructed missing assembly-level mass flow values from partial checkerboard observations, with the largest errors occurring near the most heterogeneous inlet plane and substantially smaller errors in downstream planes. The broader ML comparison further indicates that models preserving spatial structure, particularly ConvLSTM-based approaches, are better suited for predicting these reactor flow fields than models that treat the response as weakly coupled scalar time series. Overall, the results support the use of high-fidelity CFD datasets as reference data for reduced-order modeling, sparse sensing, surrogate modeling, and future multiphysics coupling workflows. This research also opens a variety of potential future work extensions, which were outlined in detail in Section \ref{sec:implications}.
+
+\section*{Data Availability}
+\label{sec:avail}
+
+The authors have all the datasets and codes to reproduce all the results in this work currently in a private GitHub repository. To ensure the confidentiality of this research, the authors will make this repository public during an advanced stage of the review process, which will be listed under our research group's public Github page: \url{https://github.com/aims-umich}. Given the significant storage demands, the geometry CAD and STAR-CCM+ CFD model files will be released through a public external download link that will be added to the repository when the archive is available.
+
+\section*{Acknowledgment}
+
+The authors gratefully acknowledge Alessandro Persico for his valuable insights and contributions to this work through regular monthly meetings. This research is sponsored by the Department of Energy Office of Nuclear Energy through the Nuclear Energy University Programs (Award number: DE-NE0009506). The first author (L. A. Burnett) received sponsorship through the National Science Foundation's Graduate Research Fellowship Program (Grant Number: DGE 2241144).
+
+\section*{CRediT Author Statement}
+
+\noindent\textbf{Logan A. Burnett}: Conceptualization, Methodology, Software, Validation, Formal Analysis, Visualization, Investigation, Data Curation, Writing - Original Draft; \textbf{Hyungjun Kim}: Methodology, Software, Validation, Formal Analysis, Visualization, Writing - Original Draft; \textbf{Hsien-Cheng Chou}: Methodology, Software, Validation, Data Curation, Visualization, Writing - Review and Edit; \textbf{Arsha Witoelar}: Methodology, Software, Validation, Data Curation, Visualization, Writing - Review and Edit; \textbf{Robert A. Brewster}: Conceptualization, Methodology, Software, Validation, Writing - Review and Edit; \textbf{Benoit Forget}: Conceptualization, Funding Acquisition, Project Administration, Writing - Review and Edit; \textbf{Emilio Baglietto}: Conceptualization, Methodology, Funding Acquisition, Supervision, Project Administration, Writing - Review and Edit; \textbf{Majdi I. Radaideh}: Conceptualization, Methodology, Resources, Funding Acquisition, Supervision, Project Administration, Writing - Original Draft.
+
+%\section*{References}
+
+\bibliographystyle{elsarticle-num}
+%\bibliographystyle{apa}
+%\biboptions{authoryear}
+\setlength{\bibsep}{0pt plus 0.3ex}
+{
+\bibliography{references}}
+
+\appendix
+
+\section{Flow Error Results for all axial layers}
+\label{app:A}
+
+The results presented in this appendix (Figures \ref{fig:maxGrid1}–\ref{fig:timeAvgGrid3}) complement those in Figure \ref{fig:Error_Vis_BaseLayer}, illustrating the maximum time-average flow errors across all axial layers—including the base layer at the core inlet—when comparing the three different models: fine, medium, and coarse.
+
+\begin{figure}[p!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/Error_vis_porous/Max_9Layer_IndivCbar_Fine_vs_Medium.png}
+    \caption{Maximum error: Fine vs Medium mesh comparison for all axial layers.}
+    \label{fig:maxGrid1}
+\end{figure}
+
+\begin{figure}[p!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/Error_vis_porous/TimeAvg_9Layer_IndivCbar_Fine_vs_Medium.png}
+    \caption{Time-averaged error: Fine vs Medium mesh comparison for all axial layers.}
+    \label{fig:timeAvgGrid1}
+\end{figure}
+
+\begin{figure}[p!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/Error_vis_porous/Max_9Layer_IndivCbar_Fine_vs_Coarse.png}
+    \caption{Maximum error: Fine vs Coarse mesh comparison for all axial layers.}
+    \label{fig:maxGrid2}
+\end{figure}
+
+\begin{figure}[p!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/Error_vis_porous/TimeAvg_9Layer_IndivCbar_Fine_vs_Coarse.png}
+    \caption{Time-averaged error: Fine vs Coarse mesh comparison for all axial layers.}
+    \label{fig:timeAvgGrid2}
+\end{figure}
+
+\begin{figure}[p!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/Error_vis_porous/Max_9Layer_IndivCbar_Medium_vs_Coarse.png}
+    \caption{Maximum error: Medium vs Coarse mesh comparison for all axial layers.}
+    \label{fig:maxGrid3}
+\end{figure}
+
+\begin{figure}[p!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/Error_vis_porous/TimeAvg_9Layer_IndivCbar_Medium_vs_Coarse.png}
+    \caption{Time-averaged error: Medium vs Coarse mesh comparison for all axial layers.}
+    \label{fig:timeAvgGrid3}
+\end{figure}
+
+\end{document}

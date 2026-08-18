@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "neup-inference-of-flow"
+version = "0.1.0"
+description = "Field reconstruction and mass-flow processing utilities for NEUP inference workflows"
+readme = "README.md"
+requires-python = ">=3.12"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["neup_inference_of_flow*"]

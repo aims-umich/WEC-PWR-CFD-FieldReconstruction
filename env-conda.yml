@@ -1,0 +1,15 @@
+name: neup-inference-flow
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - numpy
+  - pandas
+  - matplotlib
+  - h5py
+  - pytorch
+  - pip
+  - pip:
+      - -e .

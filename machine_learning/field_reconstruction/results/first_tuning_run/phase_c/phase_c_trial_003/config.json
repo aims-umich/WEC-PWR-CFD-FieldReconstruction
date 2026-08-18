@@ -1,0 +1,50 @@
+{
+  "data": {
+    "single_h5_path": null,
+    "multi_h5_paths": [
+      "../postprocessing/porous_full_core/cubic_k-eps/FApitch_over14/hdf5/plane_01_Base.h5",
+      "../postprocessing/porous_full_core/cubic_k-eps/FApitch_over14/hdf5/plane_02_Layer1.h5",
+      "../postprocessing/porous_full_core/cubic_k-eps/FApitch_over14/hdf5/plane_03_Layer2.h5",
+      "../postprocessing/porous_full_core/cubic_k-eps/FApitch_over14/hdf5/plane_04_Layer3.h5"
+    ]
+  },
+  "mask": {
+    "frac_missing": 0.5,
+    "pattern": "checkerboard",
+    "stride": null,
+    "axis": "row",
+    "seed": 42
+  },
+  "split": {
+    "train_frac": 0.45,
+    "val_frac": 0.1,
+    "seed": 123
+  },
+  "model": {
+    "in_ch": 3,
+    "base_channels": 128,
+    "dilations_xy": [
+      1,
+      1,
+      2,
+      3,
+      2,
+      1
+    ],
+    "kdepth": 3,
+    "add_coords_3d": false
+  },
+  "training": {
+    "epochs": 60,
+    "lr": 0.0015454907688767581,
+    "weight_decay": 4.959070611607715e-05,
+    "grad_clip": null,
+    "use_amp": false,
+    "patience": 8,
+    "lr_factor": 0.5,
+    "seed": 1337,
+    "batch_size": 96,
+    "num_workers": 0
+  },
+  "plot": true
+}
