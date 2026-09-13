@@ -1,0 +1,6 @@
+Info on open source PWR model CAD Data Files:
+
+- Files are provided in two formats: STEP (.step) and Parasolid binary (.x_b)
+- The files RV_solid.* are the CAD for the solid components of the reactor vessel, excluding the fuel assemblies
+- The files FAs.* are CAD block representations of the fuel assemblies (one CAD body per FA), which can be used to construct porous media represntations of the FAs
+- Note that detailed CAD for the fuel assemblies is not available at this time
