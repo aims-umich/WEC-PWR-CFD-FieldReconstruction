@@ -32,7 +32,7 @@ The associated peer-reviewed publication is:
 
 The PWR model represents a full-scale four-loop reactor vessel and core-inlet region. The geometry was constructed from publicly available reactor geometry and operating information to create a reusable computational representation suitable for high-fidelity thermal-hydraulics analysis.
 
-![PWR geometry and coolant flow path](figures/PWRGeometryAndFlowPath.png)
+![PWR geometry and coolant flow path](figures/PWR-Geometry-and-Scale.png)
 
 The CAD release currently contains:
 
