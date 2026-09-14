@@ -1,4 +1,4 @@
-# Open Full-Scale PWR CAD, CFD Models, and Flow-Field Reconstruction Tools
+# Open-Source Full-Scale Pressurized Water Reactor (PWR) CAD, CFD Models, and Flow-Field Reconstruction Tools
 
 This repository provides openly accessible computational resources for a full-scale four-loop pressurized water reactor (PWR), including **CAD geometry, high-fidelity computational fluid dynamics (CFD) model access, CFD postprocessing tools, and machine-learning workflows for reactor flow-field reconstruction**.
 
@@ -20,7 +20,7 @@ The associated peer-reviewed publication is:
 | Resource | Description | Access |
 |---|---|---|
 | **PWR CAD geometry** | Reactor-vessel internal geometry and fuel-assembly block representations in STEP and Parasolid formats | [`CAD_and_CFD/`](CAD_and_CFD/) |
-| **STAR-CCM+ CFD models** | High-fidelity PWR CFD simulation files distributed separately because of file size | **[Public CFD model download](INSERT_DROPBOX_LINK_HERE)** |
+| **STAR-CCM+ CFD models** | High-fidelity PWR CFD simulation files distributed separately because of file size | **[Public CFD model download](https://www.dropbox.com/scl/fo/kiliiobgbuljgwmh294sa/ACK8M22GYNIQ-ffKiWZm78s?rlkey=0gryd9e3hp44o5y08f4fgytg2&st=tzedfo65&dl=0)** |
 | **STAR-CCM+ automation** | Java macros and shell runners used for simulation automation and data collection | [`java_macros/`](java_macros/) |
 | **CFD postprocessing** | CSV processing, HDF5 generation, mapping, visualization, video generation, and mesh/fidelity analysis | [`postprocessing/`](postprocessing/) |
 | **Field-reconstruction ML** | CNN/3D-CNN training, evaluation, and reusable field-reconstruction modules | [`experiments/field_reconstruction/`](experiments/field_reconstruction/) |
