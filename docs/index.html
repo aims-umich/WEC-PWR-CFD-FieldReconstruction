@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Open Full-Scale PWR CAD & CFD Models</title>
+  <meta name="description" content="Open CAD, high-fidelity CFD models, simulation resources, and analysis tools for a full-scale four-loop pressurized water reactor.">
+  <meta name="theme-color" content="#0b1f33">
+  <meta property="og:title" content="Open Full-Scale PWR CAD & CFD Models">
+  <meta property="og:description" content="A shared, openly accessible computational resource for reproducible nuclear thermal-hydraulics research and collaboration.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aims-umich.github.io/WEC-PWR-CFD-FieldReconstruction/">
+  <meta property="og:image" content="https://raw.githubusercontent.com/aims-umich/WEC-PWR-CFD-FieldReconstruction/main/figures/PWR-Geometry-and-Scale.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap nav-wrap">
+      <a class="brand" href="#top" aria-label="Open PWR home">
+        <span class="brand-mark">PWR</span>
+        <span class="brand-text">Open Reactor Models</span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a href="#resources">Resources</a>
+        <a href="#provenance">Provenance</a>
+        <a href="#model">Model</a>
+        <a href="#uses">Research uses</a>
+        <a href="#publication">Publication</a>
+        <a class="nav-cta" href="https://github.com/aims-umich/WEC-PWR-CFD-FieldReconstruction">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="top" class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Open nuclear engineering research infrastructure</p>
+          <h1>Open full-scale PWR CAD and high-fidelity CFD models</h1>
+          <p class="hero-lead">A reusable computational resource for a full-scale four-loop pressurized water reactor, created to lower the barrier to realistic thermal-hydraulics research, reproducible benchmarking, education, and collaboration across institutions and national boundaries.</p>
+          <div class="hero-actions" aria-label="Primary project links">
+            <a class="button primary" href="https://github.com/aims-umich/WEC-PWR-CFD-FieldReconstruction/tree/main/CAD_and_CFD">Access CAD</a>
+            <a class="button secondary" href="https://www.dropbox.com/scl/fo/kiliiobgbuljgwmh294sa/ACK8M22GYNIQ-ffKiWZm78s?rlkey=0gryd9e3hp44o5y08f4fgytg2&st=tzedfo65&dl=0">Download CFD models</a>
+            <a class="button ghost" href="https://doi.org/10.1016/j.energy.2026.142104">Read the paper</a>
+          </div>
+          <div class="hero-meta" role="list" aria-label="Project highlights">
+            <span role="listitem">Open CAD</span>
+            <span role="listitem">Native STAR-CCM+ models</span>
+            <span role="listitem">Public-source provenance</span>
+            <span role="listitem">Peer-reviewed</span>
+          </div>
+        </div>
+
+        <figure class="hero-figure">
+          <img src="https://raw.githubusercontent.com/aims-umich/WEC-PWR-CFD-FieldReconstruction/main/figures/PWR-Geometry-and-Scale.png" alt="Full-scale PWR vessel geometry with flow paths and a human figure for scale">
+          <figcaption>Full-scale four-loop PWR vessel geometry and coolant flow path, with human scale reference.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section intro-section">
+      <div class="wrap narrow center">
+        <p class="section-kicker">Why this release exists</p>
+        <h2>Turning scattered public information into a reusable computational model</h2>
+        <p class="section-lead">Detailed, simulation-ready commercial reactor models are difficult and time-consuming to reconstruct. This project assembles publicly available reactor geometry and operating information into open CAD, CFD, postprocessing, and analysis resources so researchers can begin from a shared technical foundation instead of rebuilding the same infrastructure independently.</p>
+      </div>
+    </section>
+
+    <section id="resources" class="section section-alt">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Open resources</p>
+            <h2>What is available</h2>
+          </div>
+          <p>The model release includes geometry, native simulation files, automation, data-processing tools, and field-reconstruction workflows.</p>
+        </div>
+
+        <div class="card-grid resource-grid">
+          <article class="card featured-card">
+            <span class="status">Open</span>
+            <h3>PWR CAD geometry</h3>
+            <p>Reactor-vessel internal geometry and fuel-assembly block representations in STEP and Parasolid formats for interoperability across CAD and simulation platforms.</p>
+            <a href="https://github.com/aims-umich/WEC-PWR-CFD-FieldReconstruction/tree/main/CAD_and_CFD">Browse CAD files <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="card featured-card">
+            <span class="status">Open</span>
+            <h3>STAR-CCM+ CFD models</h3>
+            <p>Native high-fidelity PWR simulation files are hosted externally because of their size. A compatible Siemens STAR-CCM+ installation is required to open and rerun the <code>.sim</code> files.</p>
+            <a href="https://www.dropbox.com/scl/fo/kiliiobgbuljgwmh294sa/ACK8M22GYNIQ-ffKiWZm78s?rlkey=0gryd9e3hp44o5y08f4fgytg2&st=tzedfo65&dl=0">Open CFD archive <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="card">
+            <span class="status subdued">Included</span>
+            <h3>STAR-CCM+ automation</h3>
+            <p>Java macros and shell runners used for simulation automation and data collection.</p>
+            <a href="https://github.com/aims-umich/WEC-PWR-CFD-FieldReconstruction/tree/main/java_macros">View automation <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="card">
+            <span class="status subdued">Included</span>
+            <h3>CFD postprocessing</h3>
+            <p>CSV processing, HDF5 generation, spatial mapping, visualization, video generation, and mesh/fidelity analysis.</p>
+            <a href="https://github.com/aims-umich/WEC-PWR-CFD-FieldReconstruction/tree/main/postprocessing">View postprocessing <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="card">
+            <span class="status subdued">Included</span>
+            <h3>Field-reconstruction ML</h3>
+            <p>CNN/3D-CNN experiment entry points and reusable modules for reconstructing reactor flow fields from sparse observations.</p>
+            <a href="https://github.com/aims-umich/WEC-PWR-CFD-FieldReconstruction/tree/main/experiments/field_reconstruction">View ML workflow <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="card">
+            <span class="status subdued">Documentation</span>
+            <h3>Paper-to-code map</h3>
+            <p>A transparent map of publication sections to the code, inputs, outputs, and current implementation status in the repository.</p>
+            <a href="https://github.com/aims-umich/WEC-PWR-CFD-FieldReconstruction/blob/main/docs/paper-code-map.md">Open map <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="provenance" class="section provenance-section">
+      <div class="wrap provenance-grid">
+        <div>
+          <p class="section-kicker">Public-source provenance</p>
+          <h2>Built from public technical sources, not proprietary plant design data</h2>
+          <p class="section-lead">A central contribution of the project is the transformation of publicly available but dispersed reactor information into a directly reusable computational model.</p>
+          <p>The geometry and operating representation were developed from public reactor benchmark information and U.S. government technical documentation. Detailed source citations and methodology are provided in the associated peer-reviewed paper and repository documentation.</p>
+          <a class="text-link" href="https://doi.org/10.1016/j.energy.2026.142104">Read the methodology and source references <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="source-stack" aria-label="Principal public source categories">
+          <div class="source-card">
+            <span class="source-number">01</span>
+            <div>
+              <h3>BEAVRS PWR benchmark</h3>
+              <p>Public benchmark information used as part of the reactor-modeling basis.</p>
+            </div>
+          </div>
+          <div class="source-card">
+            <span class="source-number">02</span>
+            <div>
+              <h3>Oak Ridge National Laboratory documentation</h3>
+              <p>Public reactor and system technical documentation used in model development.</p>
+            </div>
+          </div>
+          <div class="source-card">
+            <span class="source-number">03</span>
+            <div>
+              <h3>U.S. Nuclear Regulatory Commission documentation</h3>
+              <p>Public Westinghouse reactor technology documentation used to support the computational representation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="model" class="section section-alt">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Model overview</p>
+            <h2>From vessel-scale flow to assembly-level data</h2>
+          </div>
+          <p>The simulations resolve lower-plenum and core-inlet behavior and support spatially structured analysis through multiple axial sampling planes.</p>
+        </div>
+
+        <div class="visual-grid">
+          <figure class="visual-card wide-card">
+            <img src="https://raw.githubusercontent.com/aims-umich/WEC-PWR-CFD-FieldReconstruction/main/figures/9PlanesVisualization.png" alt="Visualization of nine axial sampling planes in the PWR CFD model">
+            <figcaption>
+              <strong>Nine axial sampling planes</strong>
+              <span>Assembly-level quantities are sampled from the fuel-assembly inlet upward through the core for analysis and machine-learning applications.</span>
+            </figcaption>
+          </figure>
+
+          <figure class="visual-card wide-card">
+            <img src="https://raw.githubusercontent.com/aims-umich/WEC-PWR-CFD-FieldReconstruction/main/figures/Axial%20Core%20Inlet%20and%20Vertical%20Velocity%20Plane.png" alt="Representative axial and core-inlet velocity fields from the PWR CFD model">
+            <figcaption>
+              <strong>Representative velocity fields</strong>
+              <span>High-fidelity results show the spatial structure, mixing, and redistribution of coolant flow through the lower plenum and into the core.</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="model-notes">
+          <div><strong>Geometry</strong><span>Full-scale four-loop PWR vessel and core-inlet region</span></div>
+          <div><strong>CAD formats</strong><span>STEP and Parasolid binary</span></div>
+          <div><strong>CFD platform</strong><span>Siemens STAR-CCM+</span></div>
+          <div><strong>Open workflow</strong><span>CAD, automation, postprocessing, and ML tools</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="uses" class="section">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Research uses</p>
+            <h2>A shared reference model for work beyond the original study</h2>
+          </div>
+          <p>The open release is intended to support reuse, comparison, and extension by researchers with different methods and research questions.</p>
+        </div>
+
+        <div class="use-grid">
+          <div class="use-item"><h3>Thermal-hydraulics</h3><p>Core-inlet flow distribution, turbulence-model comparisons, and high-fidelity reactor CFD.</p></div>
+          <div class="use-item"><h3>Benchmarking & verification</h3><p>Cross-code comparisons, mesh studies, reproducibility, and transparent method evaluation.</p></div>
+          <div class="use-item"><h3>Reduced-order modeling</h3><p>Surrogate models, operator learning, POD-style methods, and computational acceleration.</p></div>
+          <div class="use-item"><h3>Machine learning</h3><p>Field reconstruction, sparse-sensor inference, and data-driven transient modeling.</p></div>
+          <div class="use-item"><h3>Digital twins & multiphysics</h3><p>Common geometry and data foundations for coupled-model and digital-twin research.</p></div>
+          <div class="use-item"><h3>Education & collaboration</h3><p>Realistic reactor resources for students and collaborative studies across universities, laboratories, industry, and international institutions.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section collaboration-band">
+      <div class="wrap collaboration-grid">
+        <div>
+          <p class="section-kicker light">Open collaboration</p>
+          <h2>Lowering barriers across institutions and national boundaries</h2>
+        </div>
+        <p>Common open reference models make it easier for research groups to compare methods, reproduce results, validate new approaches, and build on one another's work. The broader objective is to support transparent collaboration toward the safe and peaceful advancement of nuclear technology.</p>
+      </div>
+    </section>
+
+    <section id="publication" class="section section-alt publication-section">
+      <div class="wrap publication-grid">
+        <div>
+          <p class="section-kicker">Peer-reviewed publication</p>
+          <h2>High-fidelity modeling of pressurized water reactor flow fields for data-driven applications</h2>
+          <p class="authors">L. A. Burnett, H. Kim, H.-C. Chou, A. Witoelar, R. A. Brewster, B. Forget, E. Baglietto, and M. I. Radaideh</p>
+          <p><em>Energy</em>, Vol. 362, 142104, 2026</p>
+          <div class="publication-actions">
+            <a class="button primary" href="https://doi.org/10.1016/j.energy.2026.142104">Publisher page</a>
+            <a class="button ghost" href="https://arxiv.org/abs/2605.24763">Preprint</a>
+            <a class="button ghost" href="https://github.com/aims-umich/WEC-PWR-CFD-FieldReconstruction">Repository</a>
+          </div>
+        </div>
+
+        <div class="citation-box">
+          <div class="citation-header">
+            <strong>BibTeX</strong>
+            <button id="copy-citation" type="button">Copy</button>
+          </div>
+          <pre id="citation-text">@article{burnett2026pwr,
+  title   = {High-fidelity modeling of pressurized water reactor flow fields for data-driven applications},
+  author  = {Burnett, Logan A. and Kim, Hyungjun and Chou, Hsien-Cheng and Witoelar, Arsha and Brewster, Robert A. and Forget, Benoit and Baglietto, Emilio and Radaideh, Majdi I.},
+  journal = {Energy},
+  volume  = {362},
+  pages   = {142104},
+  year    = {2026},
+  doi     = {10.1016/j.energy.2026.142104}
+}</pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section scope-section">
+      <div class="wrap scope-grid">
+        <div>
+          <p class="section-kicker">Project context</p>
+          <h2>Part of a broader reactor-analysis research program</h2>
+        </div>
+        <div>
+          <p>This repository supports a broader Nuclear Energy University Program effort combining CFD, neutronics, detector data, and machine learning for reactor analysis and licensing research. The current open release focuses on the computational resources and workflows that are available now.</p>
+          <p class="small-note">Software distributed directly through the repository is provided under the repository license. Native STAR-CCM+ files require compatible Siemens software; see the public model archive for applicable model-file information and reuse terms.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <strong>Open Full-Scale PWR Models</strong>
+        <p>Reusable CAD, CFD, and analysis resources for nuclear engineering research.</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/aims-umich/WEC-PWR-CFD-FieldReconstruction">GitHub repository</a>
+        <a href="https://github.com/aims-umich/WEC-PWR-CFD-FieldReconstruction/tree/main/CAD_and_CFD">CAD files</a>
+        <a href="https://www.dropbox.com/scl/fo/kiliiobgbuljgwmh294sa/ACK8M22GYNIQ-ffKiWZm78s?rlkey=0gryd9e3hp44o5y08f4fgytg2&st=tzedfo65&dl=0">CFD archive</a>
+        <a href="https://doi.org/10.1016/j.energy.2026.142104">Publication</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>
