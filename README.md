@@ -1,5 +1,7 @@
 # Open-Source Full-Scale Pressurized Water Reactor (PWR) CAD, CFD Models, and Flow-Field Reconstruction Tools
 
+**Project website:** https://aims-umich.github.io/WEC-PWR-CFD-FieldReconstruction/
+
 This repository provides openly accessible computational resources for a full-scale four-loop pressurized water reactor (PWR), including **CAD geometry, high-fidelity computational fluid dynamics (CFD) model access, CFD postprocessing tools, and machine-learning workflows for reactor flow-field reconstruction**.
 
 The open release is intended to lower the barrier to realistic nuclear thermal-hydraulics research and provide a common technical foundation that can be reused across institutions and national boundaries. By making reactor geometry, simulation models, supporting scripts, and analysis workflows openly available, this project aims to support **reproducible research, model benchmarking, education, data-driven method development, and national and international collaboration toward the safe and peaceful advancement of nuclear technology**.
